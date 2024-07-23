@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>计算机网络基础及hexo使用 | 个人博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="计算机网络基础及hexo使用 | 个人博客">
+  <title>联合注入 | 个人博客</title>
+  <meta name="keywords" content=" SQL注入 , 联合注入 , union ">
+  <meta name="description" content="联合注入 | 个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="mysql语句以英文中的分号结尾   1.在小皮中开启数据库 2.在D:\phpstudy_pro\Extensions\MySQL5.7.26\bin目录下输出cmd，打开控制台。 3.输入mysql -u root -p 小皮数据库的默认账户密码为root和root   4.查看所有的数据库 命令 show databases;   5.创建数据库 create databaase stud">
 <meta property="og:type" content="article">
@@ -543,24 +543,43 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-03计算机网络基础及namp的使用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-2 联合注入" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">计算机网络基础及hexo使用</h1>
+        <h1 class="article-title">联合注入</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网安学习">网安学习</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">SQL注入</a>
+            
+            <a class="color5">联合注入</a>
+            
+            <a class="color1">union</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-11 09:35:58'>2024-07-11 09:35</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-23 20:45:44'>2024-07-23 20:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:564</span>
+        <span>字数:379</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -579,7 +598,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="toc-text">1.计算机网络基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-namp%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-text">2.namp的使用技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">3.搭建个人博客的注意事项</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-sql%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86"><span class="toc-text">1 sql注入原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%81%94%E5%90%88%E6%B3%A8%E5%85%A5%E6%AD%A5%E9%AA%A4"><span class="toc-text">2 联合注入步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8sql%E6%B3%A8%E5%85%A5"><span class="toc-text">2.1 判断是否存在sql注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E8%81%94%E5%90%88%E6%B3%A8%E5%85%A5%E9%9C%80%E8%A6%81%E4%BF%9D%E8%AF%81%E5%88%97%E6%95%B0%E5%92%8C%E8%A2%AB%E6%9F%A5%E8%AF%A2%E8%A1%A8%E7%9A%84%E5%88%97%E6%95%B0%E4%BF%9D%E6%8C%81%E4%B8%80%E8%87%B4"><span class="toc-text">2.2 联合注入需要保证列数和被查询表的列数保持一致</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E6%9F%A5%E8%AF%A2%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93database-%EF%BC%8C%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93%E7%89%88%E6%9C%ACversion-%EF%BC%8C%E5%BD%93%E5%89%8D%E7%9A%84%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90user"><span class="toc-text">2.3 查询当前数据库database()，当前数据库版本version()，当前的用户权限user()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E6%9F%A5%E6%89%BE%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%8C%E8%A1%A8%EF%BC%8C%E5%88%97%EF%BC%8C%E5%92%8C%E8%A1%A8%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">2.4 查找数据库，表，列，和表中的数据</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -595,62 +614,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-计算机网络基础"><a href="#1-计算机网络基础" class="headerlink" title="1.计算机网络基础"></a>1.计算机网络基础</h2><ol>
-<li>私网IP地址</li>
+        <h3 id="1-sql注入原理"><a href="#1-sql注入原理" class="headerlink" title="1 sql注入原理"></a>1 sql注入原理</h3><p> 在数据交互中，前端的数据传⼊到后端处理时，由于后端没有对数据做严格的判断，导致其传⼊的”数 据”拼 接到SQL语句中后，被当作SQL语句的⼀部分执⾏。</p>
+<h3 id="2-联合注入步骤"><a href="#2-联合注入步骤" class="headerlink" title="2 联合注入步骤"></a>2 联合注入步骤</h3><h4 id="2-1-判断是否存在sql注入"><a href="#2-1-判断是否存在sql注入" class="headerlink" title="2.1 判断是否存在sql注入"></a>2.1 判断是否存在sql注入</h4><ol>
+<li>首先用加入单引号，页面出现错误，在加入– -页面恢复正常，说明存在sql注入<ol>
+<li>注释有多种也可以使用 #，–+，和判断出变量被什么包裹后、直接闭合</li>
 </ol>
-<ul>
-<li>A类：10.0.0.0-10.255.255.255</li>
-<li>B类：172.16.0.0-172.31.255.255</li>
-<li>C类：192.168.0.0-192.168.255.255</li>
-</ul>
-<ol start="2">
-<li>局域网、城域网、广域网是大小的不同</li>
-</ol>
-<ul>
-<li>局域网类型，比如学校</li>
-</ul>
-<ol start="3">
-<li>特殊IP地址</li>
-</ol>
-<ul>
-<li>255.255.255.255 是广播地址。</li>
-<li>127.0.0.1&#x2F;8 是环回地址，主要是测试设备自身的软件地址。</li>
-<li>169.254.0.0&#x2F;16  没有获取IP地址时，用来临时通信</li>
-</ul>
-<ol start="4">
-<li>桥接和仅主机的区别</li>
-</ol>
-<ul>
-<li>桥接就是利用物理机的网卡，分配真实的IP地址</li>
-<li>nat就是把物理机当作路由器</li>
-</ul>
-<h2 id="2-namp的使用技巧"><a href="#2-namp的使用技巧" class="headerlink" title="2.namp的使用技巧"></a>2.namp的使用技巧</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namp -p 1=100 ip</span><br><span class="line">-p 				//扫描端口</span><br><span class="line">1-1000		//指定要扫描端口的数量</span><br><span class="line">IP        //目的主机的IP地址</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>可以收集域名信息，通过微步查询IP地址</li>
-</ol>
-<ul>
-<li>查找域名时，最主要是通过对比找打完整的IP地址</li>
-</ul>
-<ol start="2">
-<li>只知道域名信息，也可通过站长之家查询IP地址</li>
-</ol>
-<h2 id="3-搭建个人博客的注意事项"><a href="#3-搭建个人博客的注意事项" class="headerlink" title="3.搭建个人博客的注意事项"></a>3.搭建个人博客的注意事项</h2><ol>
-<li>github的账户名最好不要出现 ‘_’和’-‘ ，容易出现问题</li>
-<li>当经过长时间博客没有更新，可以按顺序使用如下命令。</li>
-</ol>
-<ul>
-<li>hexo clean</li>
-<li>hexo g</li>
-<li>hexo d</li>
-</ul>
-<ol start="3">
-<li><p>hexo的命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br><span class="line"></span><br><span class="line">hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s #静态模式</span><br><span class="line">hexo server -p 5000 #更改端口</span><br><span class="line">hexo server -i 192.168.1.1 #自定义 IP</span><br><span class="line">hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line"></span><br><span class="line">hexo s -g #生成并本地预览</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>hexo的目录结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+-- .deploy      #hexo deploy生成的文件</span><br><span class="line">+-- node_modules  #npm组件</span><br><span class="line">+-- public        #生成的静态网页文件</span><br><span class="line">+--scaffolds      #模板</span><br><span class="line">+-- source        #博客正文和其他源文件</span><br><span class="line">|  +-- _posts    #我们自己写的文章以md结尾</span><br><span class="line">+-- themes        #主题</span><br><span class="line">+-- _config.yml  #全局配置文件</span><br><span class="line">-- package.json  #定义了hexo所需要的各种模</span><br></pre></td></tr></table></figure></li>
 </ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721644378536-8b8eeb4e-406f-4c1a-b6c5-5a57e4a886e0.png#averageHue=%233c2d28&clientId=u9e92d05c-6bfe-4&from=paste&height=276&id=ud3de7c2f&originHeight=380&originWidth=1785&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=38319&status=done&style=none&taskId=u570922f5-bfce-46d8-aa7f-621cd8765dc&title=&width=1298.1818181818182" alt="image.png"></p>
+<ol start="2">
+<li>可以通过id&#x3D;1&#x2F;1 和 id&#x3D;1&#x2F;0 来判断sql注入时，变量是否被单引号包裹</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721644520939-a44f4d94-ebfd-4186-8151-3b6263702c3c.png#averageHue=%233c2e2a&clientId=u9e92d05c-6bfe-4&from=paste&height=245&id=ua4e58d27&originHeight=337&originWidth=1563&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=34437&status=done&style=none&taskId=ub0954383-ce27-4813-805b-ac5af195267&title=&width=1136.7272727272727" alt="image.png"></p>
+<h4 id="2-2-联合注入需要保证列数和被查询表的列数保持一致"><a href="#2-2-联合注入需要保证列数和被查询表的列数保持一致" class="headerlink" title="2.2 联合注入需要保证列数和被查询表的列数保持一致"></a>2.2 联合注入需要保证列数和被查询表的列数保持一致</h4><ol>
+<li>通过order by 数字来判断，当页面出现错误，说明超过了</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721644900273-4106d297-fafc-4cd4-bd12-ed2dbcc2a2ee.png#averageHue=%234b3a35&clientId=u9e92d05c-6bfe-4&from=paste&height=211&id=u5beef1dd&originHeight=290&originWidth=1598&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=26551&status=done&style=none&taskId=ue2cac953-445b-4977-8ccc-e2b02071965&title=&width=1162.1818181818182" alt="image.png"></p>
+<h4 id="2-3-查询当前数据库database-，当前数据库版本version-，当前的用户权限user"><a href="#2-3-查询当前数据库database-，当前数据库版本version-，当前的用户权限user" class="headerlink" title="2.3 查询当前数据库database()，当前数据库版本version()，当前的用户权限user()"></a>2.3 查询当前数据库database()，当前数据库版本version()，当前的用户权限user()</h4><ol>
+<li>首先要找出回显的位置</li>
+<li>id&#x3D;0 是由与页面限制只能输出一行</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721645271137-d1c2fdcc-1095-44cb-a8de-d2ab6e427df0.png#averageHue=%233f302c&clientId=u9e92d05c-6bfe-4&from=paste&height=256&id=u035d57e5&originHeight=352&originWidth=1504&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=34633&status=done&style=none&taskId=u510ebd92-6ce1-4ec8-a941-4dbbfeffed3&title=&width=1093.8181818181818" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721645112922-a2d3b255-e8cb-4683-bd76-55164e9eaa4d.png#averageHue=%233f312d&clientId=u9e92d05c-6bfe-4&from=paste&height=237&id=u77abd309&originHeight=326&originWidth=1586&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=40308&status=done&style=none&taskId=u925ea38a-b0d9-4ecb-bced-bb556a2106a&title=&width=1153.4545454545455" alt="image.png"></p>
+<h4 id="2-4-查找数据库，表，列，和表中的数据"><a href="#2-4-查找数据库，表，列，和表中的数据" class="headerlink" title="2.4 查找数据库，表，列，和表中的数据"></a>2.4 查找数据库，表，列，和表中的数据</h4><ol>
+<li>mysql数据库的版本在5以后存在information_schema库，记录整个数据库的信息</li>
+<li>schemata表的schema_name字段中记录了所有的数据库名</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721645666641-2761507e-6a7b-437b-aeb8-45ef39b5f6cd.png#averageHue=%234e4d4d&clientId=u9e92d05c-6bfe-4&from=paste&height=549&id=ubb47b4be&originHeight=755&originWidth=1916&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=205978&status=done&style=none&taskId=u3344a554-2876-4567-a750-4f16dc44997&title=&width=1393.4545454545455" alt="image.png"></p>
+<ol start="2">
+<li>tables表的table_name中记录了所有的表<ol>
+<li>要想查找指定数据库的表，要确定table_schema的值</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721645874921-ea8f3c34-f08c-485d-accf-444f2ad39a29.png#averageHue=%233e3e3d&clientId=u9e92d05c-6bfe-4&from=paste&height=517&id=ucb52e93c&originHeight=711&originWidth=1912&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=189332&status=done&style=none&taskId=u4aefcfc9-a3cb-43f5-a074-bce57a34574&title=&width=1390.5454545454545" alt="image.png"></p>
+<ol start="3">
+<li>columns表的column_name字段记录了所有的列<ol>
+<li>table_schema数据库名</li>
+<li>table_name表名</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721646094950-8aeed419-192d-4bd9-ac5b-c453eadaeb02.png#averageHue=%23424141&clientId=u9e92d05c-6bfe-4&from=paste&height=532&id=uffe5e315&originHeight=732&originWidth=1888&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=189829&status=done&style=none&taskId=ub82a8360-aa1a-4a09-96e6-c9a23008171&title=&width=1373.090909090909" alt="image.png"></p>
+<ol start="4">
+<li>查询指定表的所有数据</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721646195381-86e70d68-17bd-46a2-87f3-96f44cd12c30.png#averageHue=%23484847&clientId=u9e92d05c-6bfe-4&from=paste&height=541&id=ubb4b5ba3&originHeight=744&originWidth=1919&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=224086&status=done&style=none&taskId=ue22698c5-52f2-4746-8528-b1b9dcbcb3b&title=&width=1395.6363636363637" alt="image.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

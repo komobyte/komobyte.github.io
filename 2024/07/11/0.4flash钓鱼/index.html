@@ -7,23 +7,28 @@
   <meta name="keywords" content="">
   <meta name="description" content="flash钓鱼 | 个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1变量 php中变量需要用美元符号，$ 任何带美元符号到的都是变量 变量是由数字、下划线、字母组成 PHP不需要定义变量类型，可以自动识别  2语法 php语句是以结尾 连接符时’.’ 每一句都是以英文分号结尾  3输出方式 echo1echo &quot;这是一种输出方式&quot;;  4函数12345678910&lt;?php$a&#x3D;1;$b&#x3D;2;echo add($a,$b);functi">
+<meta name="description" content="mysql语句以英文中的分号结尾   1.在小皮中开启数据库 2.在D:\phpstudy_pro\Extensions\MySQL5.7.26\bin目录下输出cmd，打开控制台。 3.输入mysql -u root -p 小皮数据库的默认账户密码为root和root   4.查看所有的数据库 命令 show databases;   5.创建数据库 create databaase stud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP基础">
-<meta property="og:url" content="http://example.com/2024/07/15/2%20PHP%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="MySQL基础">
+<meta property="og:url" content="http://example.com/2024/07/23/3%20MySQL%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="1变量 php中变量需要用美元符号，$ 任何带美元符号到的都是变量 变量是由数字、下划线、字母组成 PHP不需要定义变量类型，可以自动识别  2语法 php语句是以结尾 连接符时’.’ 每一句都是以英文分号结尾  3输出方式 echo1echo &quot;这是一种输出方式&quot;;  4函数12345678910&lt;?php$a&#x3D;1;$b&#x3D;2;echo add($a,$b);functi">
+<meta property="og:description" content="mysql语句以英文中的分号结尾   1.在小皮中开启数据库 2.在D:\phpstudy_pro\Extensions\MySQL5.7.26\bin目录下输出cmd，打开控制台。 3.输入mysql -u root -p 小皮数据库的默认账户密码为root和root   4.查看所有的数据库 命令 show databases;   5.创建数据库 create databaase stud">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720779959616-920689c0-6a70-4089-8779-696d1856a8b0.png#averageHue=%23fefefe&clientId=u04005925-7047-4&from=paste&height=172&id=u37616935&originHeight=195&originWidth=811&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3259&status=done&style=none&taskId=u5a166ea9-6569-44a2-90c3-5a6e47115ad&title=&width=714">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720780179987-06e843b2-c5b8-4f32-b28a-88089c878649.png#averageHue=%23fefefe&clientId=u04005925-7047-4&from=paste&height=45&id=u0187db4f&originHeight=45&originWidth=564&originalType=binary&ratio=1&rotation=0&showTitle=false&size=605&status=done&style=none&taskId=u582ec611-fa7b-4a35-9320-c8c4c00da32&title=&width=564">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720783166635-e2008f4d-35ff-4ea9-9735-1871ede56561.png#averageHue=%23deb981&clientId=u3e976cb8-e847-4&from=paste&height=191&id=udb611ad5&originHeight=191&originWidth=867&originalType=binary&ratio=1&rotation=0&showTitle=false&size=14328&status=done&style=none&taskId=ub282d9e0-a99c-4721-addd-d99a9e3efb0&title=&width=867">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720783104468-9fc75213-f0c3-469e-8956-46f9d3e70b38.png#averageHue=%23fbfafa&clientId=u3e976cb8-e847-4&from=paste&height=132&id=uf71d9202&originHeight=132&originWidth=949&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7383&status=done&style=none&taskId=u0766f663-7940-4a94-94dc-f341b9a6415&title=&width=949">
-<meta property="article:published_time" content="2024-07-15T00:55:02.000Z">
-<meta property="article:modified_time" content="2024-07-15T00:58:43.752Z">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773246806-c33e387c-674a-4855-84b1-c591efeb825d.png#averageHue=%23fefdfd&clientId=u7af4141e-3426-4&from=paste&height=72&id=u9d73f60a&originHeight=81&originWidth=701&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=3670&status=done&style=none&taskId=u9e33b035-8f82-4398-a41a-a7e087d0709&title=&width=623.1111111111111">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773442034-581de914-cc18-44b8-b01c-0302755aa4d0.png#averageHue=%23181818&clientId=u7af4141e-3426-4&from=paste&height=142&id=u354438b6&originHeight=160&originWidth=690&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=12314&status=done&style=none&taskId=uef6cc913-fd7d-47ad-889b-a010638c3e2&title=&width=613.3333333333334">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773592680-a47406e6-dd5a-4b22-8c38-3787d727593a.png#averageHue=%23181818&clientId=u7af4141e-3426-4&from=paste&height=317&id=uf886ef2a&originHeight=357&originWidth=978&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=35764&status=done&style=none&taskId=u166b9220-a5cc-4cf5-b45b-39034c57f7c&title=&width=869.3333333333334">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773684431-b90dbd97-f28d-4645-8150-760f8e2c2695.png#averageHue=%231b1b1b&clientId=u7af4141e-3426-4&from=paste&height=255&id=ud41effd8&originHeight=287&originWidth=338&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=12197&status=done&style=none&taskId=u7fbc9e32-027f-4856-b93a-0de6733a653&title=&width=300.44444444444446">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773788782-925d0021-e8cd-4aa2-94f1-831b549f26c0.png#averageHue=%231b1b1b&clientId=u7af4141e-3426-4&from=paste&height=72&id=u8799871d&originHeight=81&originWidth=471&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=5877&status=done&style=none&taskId=u43017a6a-f3ff-432a-bb5c-cb63fcf0b70&title=&width=418.6666666666667">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773989800-92c9b551-ee1f-499f-9462-f27f1356429b.png#averageHue=%23222222&clientId=u7af4141e-3426-4&from=paste&height=49&id=ua30debf0&originHeight=55&originWidth=259&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=3165&status=done&style=none&taskId=u44fde789-d2e9-44ed-bdbe-0f6d639c11a&title=&width=230.22222222222223">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720774477857-411b9d85-74ac-4172-9810-64d9dcefd5ad.png#averageHue=%23222222&clientId=u7af4141e-3426-4&from=paste&height=116&id=ub200ba53&originHeight=131&originWidth=484&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=12988&status=done&style=none&taskId=u40fc7b47-e2a2-472b-bbea-6909a03760e&title=&width=430.22222222222223">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720774716603-77feb381-0f0a-4b4c-bc44-7e87b4cccebf.png#averageHue=%23151515&clientId=u7af4141e-3426-4&from=paste&height=217&id=u5c920e91&originHeight=244&originWidth=925&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=18652&status=done&style=none&taskId=u5ed00407-f2bb-48a4-9da5-16f61936496&title=&width=822.2222222222222">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720774915308-c46a36df-259a-4b6a-9c09-a464b44ebf60.png#averageHue=%23161616&clientId=u7af4141e-3426-4&from=paste&height=236&id=u3abffbc5&originHeight=266&originWidth=843&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=18889&status=done&style=none&taskId=ue7183cf9-8d14-40b4-bc90-87c82b1f9e9&title=&width=749.3333333333334">
+<meta property="article:published_time" content="2024-07-23T12:34:02.000Z">
+<meta property="article:modified_time" content="2024-07-23T12:45:43.136Z">
 <meta property="article:author" content="komobyte">
-<meta property="article:tag" content="PHP">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720779959616-920689c0-6a70-4089-8779-696d1856a8b0.png#averageHue=%23fefefe&clientId=u04005925-7047-4&from=paste&height=172&id=u37616935&originHeight=195&originWidth=811&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3259&status=done&style=none&taskId=u5a166ea9-6569-44a2-90c3-5a6e47115ad&title=&width=714">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773246806-c33e387c-674a-4855-84b1-c591efeb825d.png#averageHue=%23fefdfd&clientId=u7af4141e-3426-4&from=paste&height=72&id=u9d73f60a&originHeight=81&originWidth=701&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=3670&status=done&style=none&taskId=u9e33b035-8f82-4398-a41a-a7e087d0709&title=&width=623.1111111111111">
 
 
 <link rel="icon" href="/img/favicon.jpg">
@@ -250,7 +255,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(7)</small>
+                <small>(13)</small>
             
         </div>
     </li>
@@ -262,7 +267,7 @@
         <div data-rel="网安学习">
             
             网安学习
-            <small>(2)</small>
+            <small>(9)</small>
         </div>
         
     </li>
@@ -290,8 +295,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="4.8k">
+<input type="hidden" id="yelog_site_posts_number" value="13">
+<input type="hidden" id="yelog_site_word_count" value="8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -337,7 +342,43 @@
     <div class="tag-wrapper">
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>报错注入</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>布尔注入</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>谷歌</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>联合注入</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>漏洞</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>盲注</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>时间</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>信息收集</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>信息搜集</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -348,12 +389,87 @@
                 <i class="iconfont icon-tag"></i><a>PHP</a>
             </li>
         
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SQL</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>SQL注入</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>union</a>
+            </li>
+        
     </div>
 
 </div>
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 网安学习 "
+           href="/2024/07/23/3%20MySQL%E5%9F%BA%E7%A1%80/"
+           data-tag="SQL"
+           data-author="" >
+            <span class="post-title" title="MySQL基础">MySQL基础</span>
+            <span class="post-date" title="2024-07-23 20:34:02">2024/07/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 网安学习 "
+           href="/2024/07/23/1.%20sql%E6%B3%A8%E5%85%A5%E5%85%A5%E9%97%A8/"
+           data-tag="SQL注入"
+           data-author="" >
+            <span class="post-title" title="sql注入入门">sql注入入门</span>
+            <span class="post-date" title="2024-07-23 20:34:02">2024/07/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 网安学习 "
+           href="/2024/07/23/1%20%E8%B0%B7%E6%AD%8C%E8%AF%AD%E6%B3%95/"
+           data-tag="谷歌,信息搜集"
+           data-author="" >
+            <span class="post-title" title="谷歌语法">谷歌语法</span>
+            <span class="post-date" title="2024-07-23 20:34:02">2024/07/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 网安学习 "
+           href="/2024/07/23/2%20%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%B7%A5%E5%85%B7/"
+           data-tag="信息收集,工具"
+           data-author="" >
+            <span class="post-title" title="信息收集工具">信息收集工具</span>
+            <span class="post-date" title="2024-07-23 20:34:02">2024/07/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 网安学习 "
+           href="/2024/07/23/2%20%E8%81%94%E5%90%88%E6%B3%A8%E5%85%A5/"
+           data-tag="SQL注入,联合注入,union"
+           data-author="" >
+            <span class="post-title" title="联合注入">联合注入</span>
+            <span class="post-date" title="2024-07-23 20:34:02">2024/07/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 网安学习 "
+           href="/2024/07/23/3%20%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5/"
+           data-tag="SQL注入,报错注入"
+           data-author="" >
+            <span class="post-title" title="报错注入">报错注入</span>
+            <span class="post-date" title="2024-07-23 20:34:02">2024/07/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 网安学习 "
+           href="/2024/07/23/4.%20%E7%9B%B2%E6%B3%A8/"
+           data-tag="SQL注入,布尔注入,时间,盲注"
+           data-author="" >
+            <span class="post-title" title="盲注">盲注</span>
+            <span class="post-date" title="2024-07-23 20:34:02">2024/07/23</span>
+        </a>
         
         
         <a  class="全部文章 网安学习 "
@@ -371,15 +487,6 @@
            data-author="" >
             <span class="post-title" title="永恒之黑漏洞利用">永恒之黑漏洞利用</span>
             <span class="post-date" title="2024-07-12 20:18:48">2024/07/12</span>
-        </a>
-        
-        
-        <a  class="全部文章 "
-           href="/2024/07/12/3%20MySQL%E5%9F%BA%E7%A1%80/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="MySQL基础">MySQL基础</span>
-            <span class="post-date" title="2024-07-12 18:59:03">2024/07/12</span>
         </a>
         
         

