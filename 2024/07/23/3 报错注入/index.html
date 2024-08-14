@@ -7,28 +7,22 @@
   <meta name="keywords" content=" SQL注入 , 报错注入 ">
   <meta name="description" content="报错注入 | 个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="mysql语句以英文中的分号结尾   1.在小皮中开启数据库 2.在D:\phpstudy_pro\Extensions\MySQL5.7.26\bin目录下输出cmd，打开控制台。 3.输入mysql -u root -p 小皮数据库的默认账户密码为root和root   4.查看所有的数据库 命令 show databases;   5.创建数据库 create databaase stud">
+<meta name="description" content="1 什么是反向代理通过反向代理访问内网资源 2 方向代理工具-frpfrp 是一款高性能的反向代理应用，专注于内网穿透。它支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp，您可以安全、便捷地将内网服务暴露到公网，通过拥有公网 IP 的节点进行中转。 3 frp-工作原理frp 主要由两个组件组成：客户端(frpc) 和 服务端(frps)。通常">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL基础">
-<meta property="og:url" content="http://example.com/2024/07/23/3%20MySQL%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="内网穿透">
+<meta property="og:url" content="http://example.com/2024/08/14/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%89/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="mysql语句以英文中的分号结尾   1.在小皮中开启数据库 2.在D:\phpstudy_pro\Extensions\MySQL5.7.26\bin目录下输出cmd，打开控制台。 3.输入mysql -u root -p 小皮数据库的默认账户密码为root和root   4.查看所有的数据库 命令 show databases;   5.创建数据库 create databaase stud">
+<meta property="og:description" content="1 什么是反向代理通过反向代理访问内网资源 2 方向代理工具-frpfrp 是一款高性能的反向代理应用，专注于内网穿透。它支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp，您可以安全、便捷地将内网服务暴露到公网，通过拥有公网 IP 的节点进行中转。 3 frp-工作原理frp 主要由两个组件组成：客户端(frpc) 和 服务端(frps)。通常">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773246806-c33e387c-674a-4855-84b1-c591efeb825d.png#averageHue=%23fefdfd&clientId=u7af4141e-3426-4&from=paste&height=72&id=u9d73f60a&originHeight=81&originWidth=701&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=3670&status=done&style=none&taskId=u9e33b035-8f82-4398-a41a-a7e087d0709&title=&width=623.1111111111111">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773442034-581de914-cc18-44b8-b01c-0302755aa4d0.png#averageHue=%23181818&clientId=u7af4141e-3426-4&from=paste&height=142&id=u354438b6&originHeight=160&originWidth=690&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=12314&status=done&style=none&taskId=uef6cc913-fd7d-47ad-889b-a010638c3e2&title=&width=613.3333333333334">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773592680-a47406e6-dd5a-4b22-8c38-3787d727593a.png#averageHue=%23181818&clientId=u7af4141e-3426-4&from=paste&height=317&id=uf886ef2a&originHeight=357&originWidth=978&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=35764&status=done&style=none&taskId=u166b9220-a5cc-4cf5-b45b-39034c57f7c&title=&width=869.3333333333334">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773684431-b90dbd97-f28d-4645-8150-760f8e2c2695.png#averageHue=%231b1b1b&clientId=u7af4141e-3426-4&from=paste&height=255&id=ud41effd8&originHeight=287&originWidth=338&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=12197&status=done&style=none&taskId=u7fbc9e32-027f-4856-b93a-0de6733a653&title=&width=300.44444444444446">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773788782-925d0021-e8cd-4aa2-94f1-831b549f26c0.png#averageHue=%231b1b1b&clientId=u7af4141e-3426-4&from=paste&height=72&id=u8799871d&originHeight=81&originWidth=471&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=5877&status=done&style=none&taskId=u43017a6a-f3ff-432a-bb5c-cb63fcf0b70&title=&width=418.6666666666667">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773989800-92c9b551-ee1f-499f-9462-f27f1356429b.png#averageHue=%23222222&clientId=u7af4141e-3426-4&from=paste&height=49&id=ua30debf0&originHeight=55&originWidth=259&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=3165&status=done&style=none&taskId=u44fde789-d2e9-44ed-bdbe-0f6d639c11a&title=&width=230.22222222222223">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720774477857-411b9d85-74ac-4172-9810-64d9dcefd5ad.png#averageHue=%23222222&clientId=u7af4141e-3426-4&from=paste&height=116&id=ub200ba53&originHeight=131&originWidth=484&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=12988&status=done&style=none&taskId=u40fc7b47-e2a2-472b-bbea-6909a03760e&title=&width=430.22222222222223">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720774716603-77feb381-0f0a-4b4c-bc44-7e87b4cccebf.png#averageHue=%23151515&clientId=u7af4141e-3426-4&from=paste&height=217&id=u5c920e91&originHeight=244&originWidth=925&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=18652&status=done&style=none&taskId=u5ed00407-f2bb-48a4-9da5-16f61936496&title=&width=822.2222222222222">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720774915308-c46a36df-259a-4b6a-9c09-a464b44ebf60.png#averageHue=%23161616&clientId=u7af4141e-3426-4&from=paste&height=236&id=u3abffbc5&originHeight=266&originWidth=843&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=18889&status=done&style=none&taskId=ue7183cf9-8d14-40b4-bc90-87c82b1f9e9&title=&width=749.3333333333334">
-<meta property="article:published_time" content="2024-07-23T12:34:02.000Z">
-<meta property="article:modified_time" content="2024-07-23T12:45:43.136Z">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723633607198-ccf1d460-d82a-4b0a-b5ba-c8e7b0a91938.png#averageHue=%23363635&clientId=ued4f7d65-a452-4&from=paste&height=241&id=u2f5495cf&originHeight=331&originWidth=1261&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=27585&status=done&style=none&taskId=u73a9f03e-5c4d-4b3f-87f1-2298ada027d&title=&width=917.0909090909091">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46252388/1723633012979-048af324-a695-42b3-8b44-bd29a5bec9e9.png?x-oss-process=image/format,webp#averageHue=%23040404&from=url&id=Cfzcg&originHeight=265&originWidth=581&originalType=binary&ratio=1.375&rotation=0&showTitle=false&status=done&style=none&title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723636039152-81cbe099-70fc-4005-8688-a0bf63a7fe29.png#averageHue=%23fbfbfb&clientId=u3a4e4ba6-ef7b-4&from=paste&height=551&id=u185aa7b7&originHeight=757&originWidth=1331&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=47904&status=done&style=none&taskId=u25b94401-a098-4975-8a27-9bdd3cc79a1&title=&width=968">
+<meta property="article:published_time" content="2024-08-14T12:34:02.000Z">
+<meta property="article:modified_time" content="2024-08-14T12:02:35.139Z">
 <meta property="article:author" content="komobyte">
 <meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1720773246806-c33e387c-674a-4855-84b1-c591efeb825d.png#averageHue=%23fefdfd&clientId=u7af4141e-3426-4&from=paste&height=72&id=u9d73f60a&originHeight=81&originWidth=701&originalType=binary&ratio=1.125&rotation=0&showTitle=false&size=3670&status=done&style=none&taskId=u9e33b035-8f82-4398-a41a-a7e087d0709&title=&width=623.1111111111111">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723633607198-ccf1d460-d82a-4b0a-b5ba-c8e7b0a91938.png#averageHue=%23363635&clientId=ued4f7d65-a452-4&from=paste&height=241&id=u2f5495cf&originHeight=331&originWidth=1261&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=27585&status=done&style=none&taskId=u73a9f03e-5c4d-4b3f-87f1-2298ada027d&title=&width=917.0909090909091">
 
 
 <link rel="icon" href="/img/favicon.jpg">
@@ -255,10 +249,63 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(13)</small>
+                <small>(14)</small>
             
         </div>
     </li>
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="内网">
+            <i class="fold iconfont icon-right"></i>
+            内网
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="内网&lt;---&gt;反向代理">
+            <i class="fold iconfont icon-right"></i>
+            反向代理
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="内网&lt;---&gt;反向代理&lt;---&gt;内网穿透">
+            
+            内网穿透
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
     
         
             
@@ -295,8 +342,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="13">
-<input type="hidden" id="yelog_site_word_count" value="8k">
+<input type="hidden" id="yelog_site_posts_number" value="14">
+<input type="hidden" id="yelog_site_word_count" value="8.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -407,6 +454,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 内网 反向代理 内网穿透 "
+           href="/2024/08/14/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%89/"
+           data-tag="SQL"
+           data-author="" >
+            <span class="post-title" title="内网穿透">内网穿透</span>
+            <span class="post-date" title="2024-08-14 20:34:02">2024/08/14</span>
+        </a>
         
         
         <a  class="全部文章 网安学习 "
