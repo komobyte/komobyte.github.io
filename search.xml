@@ -15,16 +15,16 @@
           
           <category> 内网 </category>
           
-          <category> 反向代理 </category>
-          
-          <category> 内网穿透 </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> SQL </tag>
+            <tag> 内网 </tag>
+            
+            <tag> 反向代理 </tag>
+            
+            <tag> 内网穿透 </tag>
             
         </tags>
       
